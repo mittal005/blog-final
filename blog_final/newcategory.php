@@ -60,16 +60,7 @@
                   
                   <div class="col-md-7 ">
                     <div class="row">
-                      <div class="col-md-4">
-            <select class="form-control">
-      <option>All Dates</option>
-
-    </select>
-  </div>
-  <div class="col-md-4">
-    <button type="button" class="button btn btn-primary">Apply</button>
-     
-   </div>
+                     
    <div class="col-md-4">
    </div>
    </div>
