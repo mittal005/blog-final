@@ -135,6 +135,7 @@ while ($row=mysqli_fetch_array($select_users)) {
 <input type="passord" class="form-control" name="password"  value="<?php if(isset($user_password)){echo $user_password;}else if(isset($updated_password)){echo $updated_password;}else{echo $common_password;}  ?>" required>
 <label>Re-type Password</label>
 <input type="passord" class="form-control">
+<br>
 <input type="submit" name="update_users" class="btn btn-primary" value="Update Your Profile">
 <!-- <button type="button" class="btn btn-primary" name="update_users">Update Your Profile</button> -->
 

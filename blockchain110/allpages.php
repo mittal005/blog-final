@@ -21,22 +21,31 @@ $select_draft_query=mysqli_query($connection,$draft_query);
 if($select_draft_query){
      $draft_posts = mysqli_num_rows($select_draft_query); 
                }  
+
 ?>
 <!-- ------------------------------sorting------------------ -->
 <?php
+
+
 ?>
 <!-- ---------------------------------------- -->
 <body id="page-top">
+
  <?php include("includes/topnav.php"); ?>
+
   <div id="wrapper">
-    <!-- Sidebar -->   
+
+    <!-- Sidebar -->
+    
 <?php include("includes/sidenav.php"); ?>
+
       <div class="container-fluid">
         <div class="row dash_row outer-w3-agile">
             <div class="col-md-12">
               <div class="row">
           <div class="col-md-12">
-         <a href="allpages.php?show=all"> All (<span><?php echo $total_posts;    ?></span>) </a> |  <a href="allpages.php?show=published"> Published </a> (<span><?php echo $publish_posts;   ?></span>)  | <a href="allpages.php?show=draft">  Draft </a>(<span><?php echo $draft_posts; ?></span>) 
+         <a href="allpages.php?show=all"> All (<span><?php echo $total_posts;    ?></span>) </a> |  <a href="allpages.php?show=published"> Published </a> (<span><?php echo $publish_posts;   ?></span>)  | <a href="allpages.php?show=draft">  Draft </a>(<span><?php echo $draft_posts; ?></span>) <!-- <a href="#"> Trash</a> (<span></span>) -->
+
         </div>
 </div>
       

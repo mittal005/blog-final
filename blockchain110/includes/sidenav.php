@@ -15,6 +15,7 @@
           <a class="dropdown-item" href="allpost.php">All post</a>
           <a class="dropdown-item" href="addpost.php">Add new</a>
          <a class="dropdown-item" href="newcategory.php">Categories</a>
+         
           </div>
       </li>
       <li class="nav-item dropdown card-header1">
