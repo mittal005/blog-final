@@ -11,7 +11,7 @@ while($row=mysqli_fetch_array($select_allposts)) {
   $Status=$row['Status'];
   }
   if ($Status=="Publish") {
-   $query="UPDATE pages SET Title='$title',username='$fname',publishTime='$fdate' WHERE id={$id}";
+   $query="UPDATE pages SET Title='$title',username='$fname',publishTime='$fdate',createdDate='$fdate' WHERE id={$id}";
   $update_query=mysqli_query($connection,$query);
   if (!$update_query) {
     printf("Error: %s\n", mysqli_error($connection));
@@ -19,7 +19,7 @@ while($row=mysqli_fetch_array($select_allposts)) {
   }  
   }
   if ($Status=="Draft") {
-   $query="UPDATE pages SET Title='$title',username='$fname', draftTime='$fdate' WHERE id={$id}";
+   $query="UPDATE pages SET Title='$title',username='$fname', draftTime='$fdate',createdDate='$fdate' WHERE id={$id}";
   $update_query=mysqli_query($connection,$query);
   if (!$update_query) {
     printf("Error: %s\n", mysqli_error($connection));
@@ -32,6 +32,88 @@ while($row=mysqli_fetch_array($select_allposts)) {
 // -----------------------------
 if (isset($_POST['delete_post'])) {
    $id=$_POST['deleteID'];  
+   $query="SELECT * FROM pages WHERE id={$id}";
+   $select_query=mysqli_query($connection,$query);
+   if (!$select_query) {
+    printf("Error: %s\n", mysqli_error($connection));
+    exit();
+  }  
+    while ($row=mysqli_fetch_array($select_query)) {
+       $userid=$row['user_id'];
+       $username=$row['username'];
+       $Title=$row['Title'];
+       $Content=$row['Content'];
+        $Status=$row['Status'];
+       $draftTime=$row['draftTime'];
+       $publishTime=$row['publishTime'];
+       $Visibility=$row['Visibility'];
+       $publihedOn=$row['publihedOn'];
+       $selectCategory=$row['selectCategory'];
+       $categoryName=$row['categoryName'];
+       $categoryType=$row['categoryType'];
+       $seo_title=$row['seo_title'];
+       $url=$row['url'];
+       $seo_schema=$row['seo_schema'];
+       $image=$row['image'];
+    }
+
+    if(empty($userid)){ 
+          $userid="";  
+    }
+    if(empty($username)){ 
+          $username="";  
+    }
+    if(empty($Title)){ 
+          $Title="";  
+    }
+    if(empty($Content)){ 
+          $Content="";  
+    }
+    if(empty($Status)){ 
+          $Status="";  
+    }
+    if(empty($draftTime)){ 
+          $draftTime="";  
+    }
+    if(empty($publishTime)){ 
+          $publishTime="";  
+    }
+    if(empty($Visibility)){ 
+          $Visibility="";  
+    }
+    if(empty($publihedOn)){ 
+          $publihedOn="";  
+    }
+    if(empty($selectCategory)){ 
+          $selectCategory="";  
+    }
+     if(empty($categoryName)){ 
+         $categoryName="";  
+    }
+    if(empty($categoryType)){ 
+          $categoryType="";  
+    }
+    if(empty($seo_title)){ 
+          $seo_title="";  
+    }
+
+    if(empty($url)){ 
+          $url="";  
+    }
+    if(empty($seo_schema)){ 
+          $seo_schema="";  
+    }
+
+    if(empty( $image)){ 
+           $image="";  
+    }
+
+    $query="INSERT INTO trashpages(user_id,username,Title,Content,Status,draftTime,publishTime,Visibility,publihedOn,selectCategory,categoryName,categoryType,seo_title,url,seo_schema,image)VALUES('$userid','$username','$Title','$Content','$Status','$draftTime','$publishTime','$Visibility',' $publihedOn','$selectCategory','$categoryName','$categoryType','$seo_title','$url','$seo_schema','$image')";
+    $insert_query=mysqli_query($connection,$query);
+    if (!$insert_query) {
+    printf("Error: %s\n", mysqli_error($connection));
+    exit();
+  }  
   
    $query="DELETE FROM pages WHERE id={$id}";
   $delete_query=mysqli_query($connection,$query);
@@ -90,6 +172,7 @@ while($row=mysqli_fetch_array($select_allposts)) {
   $categoryName=$row['categoryName'];
   $draftTime=$row['draftTime'];
   $publishTime=$row['publishTime'];
+  $createdDate=$row['createdDate'];
               ?>       
 
     
@@ -99,13 +182,13 @@ while($row=mysqli_fetch_array($select_allposts)) {
     <td><label><?php echo $username;  ?></label></td>
     <td class="page_control"><label><?php echo $categoryName;  ?></label></td>
 
-    <td><label></label></td>
-    <td><label></label></td>
+    <!-- <td><label></label></td>
+    <td><label></label></td> -->
    
     <td><?php if ($draftTime != "") {
-                 echo    $draftTime; 
+                 echo    $createdDate; 
     }else{
-         echo    $publishTime;
+         echo    $createdDate;
     }                        ?></td>
     <td> <a class="nav-link " href="#" id="actionmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-ellipsis-v font-24"></i>
@@ -236,7 +319,7 @@ while($row=mysqli_fetch_array($select_allposts)) {
     //$("#update_id").val(data[0]);
     $("#title").val(data[1]);
     $("#content").val(data[2]);
-    $("#datepicker").val(data[6]);
+    $("#datepicker").val(data[4]);
      });
 });
 

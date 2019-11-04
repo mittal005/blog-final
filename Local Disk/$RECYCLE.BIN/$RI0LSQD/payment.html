@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>paytm</title>
+<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/font.css" rel="stylesheet" type="text/css" media="all" />
+    
+    
+    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type='text/javascript' src='script/script.js'></script>
+    <script type='text/javascript' src='script/script7.js'></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap" rel="stylesheet">
+
+    
+    
+    
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Online Recharge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+
+<!--//meta data-->
+
+       
+</head>
+
+
+    
+<!--    -------------------------------------------------------header------------------------------------------------------------------------>
+
+     
+    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #021138;border: none">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" ><h3 style="color: white;font-family: 'Nanum Gothic', sans-serif;"><i class="fa fa-bank" style="font-size:28px;color:white"></i>EC-Recharge</h3></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+
+
+        
+        <li><a href="payment.html" ><i class="fa fa-money" style="font-size:20px;color:white"></i><h10 style="color: white;">ADD MONEY</h10></a></li>
+        <li style="color: black"><a data-toggle="modal" data-target="#myModal" ><i class="fa fa-user" style="font-size:20px;color:white"></i><h10 style="color: white">LOGIN/REGISTER</h10></a></li>
+      </ul>
+        
+        
+        
+        <div class="nav2">
+          <ul class="nav navbar-nav navbar-right" >
+               <li><a href="#about"style="color: black"><h1>MENU</h1></a></li>
+
+        <li><a href="indexcopy1.html"style="color: black" >Mobile</a></li>
+        <li><a href="electricity%20.html"style="color: black">Electricity</a ></li>
+
+        
+        <li><a href="phone.html"style="color: black">phone</a></li>
+        <li><a href="metro.html"style="color: black">Metro</a></li>
+          
+
+        <li><a href="broadband.html">Brandbord</a></li>
+
+    
+      </ul>
+    </div>
+  </div>
+    </div>
+</nav> 
+        
+        
+    
+    
+    
+        <!--------------------------------------------------------login header div--------------------------------------------------------->
+				<div class="clearfix"></div>
+        
+    
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;</button>
+                        <h4 class="modal-title" id="myModalLabel"><img src="images/iconfinder__Leaf_circle__1156626%20(1).png" width="40px" height="40px">
+                           EC-Money Transfer</h4>
+<!--     --------------------------------------------------------login div------------------------------------------------------------------------               -->
+                        
+                    </div>
+                    <div class="modal-body ">
+                        <div class="row">
+                            <div class="col-md-8 extra-w3layouts" style="border-right: 1px dotted #C2C2C2;">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#Login" data-toggle="tab" >Login</a></li>
+                                    <li><a href="#Registration" data-toggle="tab">Register</a></li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="Login">
+<!--                                        <form  class="form-horizontal" action="#" method="get">-->
+                                        <div class="form-group">
+                                            <label for="email" class="col-sm-2 control-label">
+                                                Email</label>
+                                            
+                                            
+                                            
+                                            
+                                            <div class="col-sm-10" style="padding-bottom: 15px">
+                                                <input type="email" class="form-control" placeholder="Email" id="modalLRInput10" />
+                                            </div>
+                                            <p id="error-email" ></p>
+                                            
+                                            
+                                        </div>
+                                        <div class="form-group" style="padding-bottom: 15px">
+                                            <label for="exampleInputPassword1" class="col-sm-2 control-label">
+                                                Password</label>
+                                            
+                                            
+                                            
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control"  placeholder="password " id="modalLRInput11"  />
+                                            </div>
+                                             <p id="error-password"></p>
+                                            
+                                            
+                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                            </div>
+                                            
+                                            
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="submit btn btn-primary btn-sm"style="background-color: #0c084b;margin-top: 20px;" onclick="validateLogin()">
+                                                    Submit</button>
+                                                
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                       
+                                    </div>
+                                    <script>
+                 function validateLogin(){
+     var username=document.getElementById("modalLRInput10").value;
+     var password=document.getElementById("modalLRInput11").value;
+   
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+     
+        if(username==""){
+           document.getElementById("error-email").innerHTML = "Mandatory*";
+           }
+        else if(!(username.match(mailformat))){
+            document.getElementById("error-email").innerHTML = "Invalid Email ID";
+        }
+        else{
+            document.getElementById("error-email").innerHTML = "";
+        }
+       
+        if(password==""){
+             document.getElementById("error-password").innerHTML = "Mandatory*";
+        }
+        else if(!(password.match(passw))){
+                document.getElementById("error-password").innerHTML = "6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter";
+                }
+        else{
+            document.getElementById("error-password").innerHTML = "";
+        }
+       
+        if(username!=="" && username.match(mailformat) && password!=="" && password.match(passw) ){
+//            header-button-pay-login
+           
+            //document.getElementById("header-button-pay-login").innerHTML = "Logout";
+           
+//           console.log(check);
+            //localStorage.setItem("header-button-pay-login", "logout");
+//            header-button-pay-login= localStorage.getItem("header-button-pay-login");
+
+            window.location.href = "indexcopy.html" ;
+           }
+       
+       
+       
+    }
+                                        
+    
+                                        
+                                    </script>
+                                    
+                                    
+                                    
+                                    
+<!--                         =========================----------------register div-------------------------=============           -->
+                                    
+ 
+                                    
+                                    
+                                    
+                                    
+                                    <div class="tab-pane" id="Registration">
+                                        <form  class="form-horizontal" action="#" method="get">
+                                       
+                                        <div class="form-group">
+                                            <label for="email" class="col-sm-2 control-label">
+                                                Username</label>
+                                            <div class="col-sm-10">
+                                                <input type="email" class="form-control" id="inputEmail" placeholder="Username"  />
+                                            </div>
+                                        </div>
+                                            <p id="error-email-r"style="margin-left: 80px; font-family: 'Nanum Gothic', sans-serif;"></p>
+                                            
+                                            
+                                        <div class="form-group">
+                                            <label for="mobile" class="col-sm-2 control-label">
+                                                password</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" id="inputPassword" placeholder="Password"  />
+                                            </div>
+                                        </div>
+                                            <p id="error-password-r"style="margin-left: 80px; font-family: 'Nanum Gothic', sans-serif;"></p>
+                                            
+                                        <div class="form-group">
+                                            <label for="password" class="col-sm-2 control-label">
+                                                Repeat
+                                                password</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" id="repeatPassword" placeholder=" Repeat Password"  />
+                                            </div>
+                                        </div>
+                                            <p id="error-repeat-password"style="margin-left: 80px; font-family: 'Nanum Gothic', sans-serif;"></p>
+                                            
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="submit btn btn-primary btn-sm"  style="background-color: #0c084b" onclick="validateRegister() ">
+                                                    Save & Continue</button>
+                                               
+                                            </div>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div id="OR" >
+                                    OR</div>
+                            </div>
+                            <script>
+                                function validateRegister() {
+        var username=document.getElementById('inputEmail').value;
+        var password=document.getElementById('inputPassword').value;  
+        var repeatpassword=document.getElementById('repeatPassword').value;  
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+    if(username==""){
+        document.getElementById('error-email-r').innerHTML="Mandatory*";
+    }
+           else if(!(username.match(mailformat))){
+                 document.getElementById('error-email-r').innerHTML="Invalid Email ID";  
+                   }
+           else{
+               document.getElementById('error-email-r').innerHTML="";
+           }
+    if(password==""){
+         document.getElementById('error-password-r').innerHTML="Mandatory*";  
+    }
+            else if(!(password.match(passw))){
+                document.getElementById("error-password-r").innerHTML = "6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter";
+                }
+           else{
+                document.getElementById('error-password-r').innerHTML="";  
+           }
+    if(repeatpassword==""){
+        document.getElementById('error-repeat-password').innerHTML="Mandatory*";  
+       }
+           else if( password != repeatpassword){
+                document.getElementById('error-repeat-password').innerHTML="Password does not match";  
+           }
+    else{
+         document.getElementById('error-repeat-password').innerHTML="";  
+    }
+           if(username!=="" && username.match(mailformat) && password!=="" && password.match(passw) && repeatpassword!=="" && password == repeatpassword ){
+              window.location.href = "../index.html" ;
+              }
+           
+           
+        }
+ 
+                            
+                            
+                            </script>
+     
+                            
+<!--        =====================================================social============================================================                    -->
+                            
+                            
+                            <div class="col-md-4 extra-agileits">
+                                <div class="row text-center sign-with">
+                                    <div class="col-md-12">
+                                        <h3 class="other-nw">
+                                            Sign in with</h3>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="btn-group btn-group-justified">
+                                            <a href="https://www.facebook.com/" class="btn btn-primary">Facebook</a> <a href="https://accounts.google.com" class="btn btn-danger">
+                                                Google +</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	
+    
+  
+<!--    ===============================================================cerousel div===========================================-->
+    
+    
+
+<body>
+    
+ 
+	
+	<div class=" header-right"  style="margin-top: 50px; width: 100%;"  id="about" >
+		<div class="banner">
+			 <div class="slider" >
+			    <div >
+			      <ul class="rslides" id="slider">		       
+					 <li>
+			          	 <div class="banner1">
+                             
+			           		<div class="caption">
+                                <div class="col-sm-12">
+					          	
+					          	<h1 style="color: white;font-family: 'Nanum Gothic', sans-serif;font-size: 40px;">SEND AND RECEIVE MONEY</h1>
+                                    <h3 style="color: white;font-family: 'Nanum Gothic', sans-serif;font-size: 20px;margin-top: 20px;">Quickly and easily send, receive and request money online with Payyed.</h3>
+                                    <div style="margin-top: 20px;">
+                                    <p1  style="border-radius: 5px ; color: white;margin-top: 20px;background-color: #021138;text-decoration: none;font-size: 20px;padding: 5px 20px">Get Started</p1>
+                                    </div>
+                               </div>
+			          		</div>
+			          	</div>
+			         </li>
+					 <li>
+			          	 <div class="banner2">
+			           		<div class="caption">
+                                 <div class="col-sm-12">
+					          	
+					          	<h2 style="color: white;font-family: 'Nanum Gothic', sans-serif;font-size: 40px;">Trusted by more than 50,000<br> businesses worldwide.</h2>
+                                    <h3 style="color: white;font-family: 'Nanum Gothic', sans-serif;font-size: 20px;margin-top: 20px;">Over 180 countries and 120 currencies supported.</h3>
+                                    <div style="margin-top: 20px;">
+                                    <p1  style="border-radius: 5px ; color: white;margin-top: 20px;background-color: #021138;text-decoration: none;font-size: 20px;padding: 5px 20px">Get Started</p1>
+                                    </div>
+                               </div>
+                                
+					         
+                                <p><a href="images/ff.jpg"></a></p>
+			          		</div>
+			          	</div>
+			         </li>
+			       	
+                    	
+			      </ul>
+			  </div>
+			</div>
+		</div>
+	</div>
+	 
+<!--===================================================================== icons div ===============================================-->
+ 
+     
+  <div class="container-fluid opps" style="background-color:#021138;width: 100%;height: auto;">
+      
+          <div class="row" style="margin-top: 20px;margin-bottom: 20px">
+              <div class="col-sm-2"  style="text-align: center">
+                  <div>
+                  <a href="index.html" class="icon fa fa-mobile inner-icon" aria-hidden="true" style="font-size: 50px;color: white;text-decoration: none; " ></a>
+              
+              </div>
+               <div ><a href="indexcopy1.html"  style="color: white;text-decoration: none; font-family: 'Nanum Gothic', sans-serif;">Mobile</a></div>
+              
+              
+              </div>
+               <div class="col-sm-2"  style="text-align: center">
+                  <div>
+                  <a style="font-size: 50px;color: white;text-decoration: none;" class="icon fa fa-lightbulb-o inner-icon" aria-hidden="true" href="electricity%20.html" ></a>
+              
+              </div>
+               <div ><a href="electricity%20.html"  style="color: white;text-decoration: none; font-family: 'Nanum Gothic', sans-serif;">Electricity</a></div>
+              
+              
+              </div>
+              <div class="col-sm-2"  style="text-align: center">
+                  <div>
+                  <a class="icon fa fa-television inner-icon" aria-hidden="true" style="font-size: 50px;color: white;text-decoration: none; " href="dth.html"></a>
+              
+              </div>
+               <div ><a href="dth.html"  style="color: white;text-decoration: none; font-family: 'Nanum Gothic', sans-serif;">DTH </a></div>
+              
+              
+              </div>
+               <div class="col-sm-2" style="text-align: center">
+                  <div>
+                  <a class="icon fa fa-phone inner-icon" aria-hidden="true" style="font-size: 50px;color: white;text-decoration: none;" href="phone.html"></a>
+              
+              </div>
+               <div ><a href="phone.html" style="color:white;text-decoration: none; font-family: 'Nanum Gothic', sans-serif;">Phone</a></div>
+              
+              
+              </div>
+          
+               <div class="col-sm-2"  style="text-align: center;">
+                  <div>
+                  <a class="icon fa fa-connectdevelop inner-icon" aria-hidden="true" style="font-size: 50px;color: white;text-decoration: none" href="broadband.html" ></a>
+              
+              </div>
+               <div ><a href="broadband.html"  style="color: white;text-decoration: none; font-family: 'Nanum Gothic', sans-serif;">Broadband</a></div>
+              
+              
+              </div>
+              <div class="col-sm-2"  style="text-align: center;">
+                  <div>
+                  <a class="icon fa fa-subway inner-icon" aria-hidden="true" style="font-size: 50px;color: white;text-decoration: none" href="metro.html"></a>
+              
+              </div>
+               <div ><a href="metro.html"  style="color:white;text-decoration: none; font-family: 'Nanum Gothic', sans-serif;">Metro</a></div>
+              
+              
+              </div>
+          
+          
+          
+          </div>
+    </div>
+    
+    
+    
+<!--    ==========================================================mobile====================================================================-->
+	
+  
+
+         
+<div class="container-fluid bg-grey" style="background-color: white">
+  <div class="row">
+    <div class="col-sm-4">
+        <img src="images/pngtree-concept-banking-logo-png-image_712956.jpg" width="300px" height="300px" style="margin-top: 100px;">
+     
+    </div>
+    <div class="col-sm-8">
+     
+       <div class="row">
+    <div class="col-sm-12">
+        <h2 style="text-align:center; font-family: 'Nanum Gothic', sans-serif;color: #021138;margin-bottom: 100px;"> ADD MONEY</h2>
+       
+                   
+            
+         <div>
+            
+                    <div >
+		                       <div class="agileits-select"style="margin-top: 20px">
+                                   <h3>Enter the amount here</h3>
+                                 <input type="text" class="dth"  id="walletamount" placeholder="Enter the Amount" value="" required >
+                                </div>
+                           <div id="error-amount" style="color: red">
+                 
+                </div>
+						
+						
+                                <div class="agileits-select"  style="margin-top: 20px">
+                                 <button  p class="btn btn-primary btn-lg btn-block" type="submit" onclick="addMoney()" style="background-color: #0e1d6d;border: none;" >submit</button>
+        
+                                </div>
+                               
+                     
+                        
+                        
+                         
+                            
+                                  <div style="margin-top: 20px">
+                           
+                                <div> <button  p class="btn btn-primary btn-lg btn-block" type="submit" style="background-color: #0e1d6d;border: none;margin-top: 10px;" ><a href="indexcopy.html" style="color: white;text-decoration: none">cancel</a></button></div>
+                            
+				        
+						
+																							
+						</div>	
+						</div>
+                        </div>
+        
+      
+  
+        
+        </div>
+    </div>
+    </div>
+            </div>
+    </div>
+   
+        
+     
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
+    
+    
+   
+
+        
+    
+      <script>
+       function addMoney() {
+  var walletamount = document.getElementById("walletamount").value;
+            localStorage.setItem("walletamount", walletamount);
+             walletamount = localStorage.getItem("walletamount");
+                if(isNaN(walletamount) || walletamount==0){
+              document.getElementById('error-amount').innerHTML="Enter a valid amount";
+           
+        }
+           else{window.location.href ="paymentdetails.html"}
+          
+         }
+
+
+      </script>
+  
+   
+    <script>
+     
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+    
+          var forms = document.getElementsByClassName('needs-validation');
+
+          
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+           
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+       
+    </script>
+    
+
+    
+    
+    
+    
+    
+    
+<!--    ==================================================================================================================-->
+       <div class="foot" >
+<div class="container-fluid"  style="background-color: #021138;height: 200px;"> 
+<h2 style="color: white !important;font-size: 10px;font-family: 'Nanum Gothic', sans-serif;"> EC-Recharge</h2>
+    <h2 style="color: white !important;font-size: 10px;font-family: 'Nanum Gothic', sans-serif;">Enjoy Instant, Safe & Secure Money Transfer </h2>
+
+<ul class="boot">
+<li><a href="https://facebook.com"><i class="fa fa-facebook btn" style="font-size: 20px;color:white;display: inline-block;"></i></a></li>
+<li><a href="https://instagram.com"><i class="fa fa-instagram btn" style="font-size: 20px;color:white;display: inline-block;"></i></a></li>
+<li><a href="https://twitter.com"><i class="fa fa-twitter btn" style="font-size: 20px;color: white"></i></a></li>
+<li><a href="https://linkedin.com"><i class="fa fa-linkedin btn" style="font-size: 20px;color:white"></i></a></li>
+</ul>
+</div>
+</div>	
+    
+    
+    
+    
+<!--    ========================================================================================================================-->
+
+		<script src="css/script5.js"></script>
+
+    <!-- Banner-slider -->
+<script src="css/script6.js"></script>
+   <script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+  </script>
+   
+<script src="css/script7.js"></script>
+
+    
+ 
+<link rel="stylesheet" type="text/css" href="css/" />
+<script src="css/script8.js"></script>
+
+		
+<!--			===============================================================================-->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+			
+			
+    	
+</body>
+    </body>
+
+</html>

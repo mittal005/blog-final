@@ -1,0 +1,285 @@
+#logo
+{
+  display:none;
+}
+
+.sidebar .nav-item .nav-link:active, .sidebar .nav-item .nav-link:focus, .sidebar .nav-item .nav-link:hover {
+    color:#fff !important;
+}
+.outer-w3-agile {
+    padding: 2em 1em;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.25);
+    background: #fff;
+}
+.cke_textarea_inline{
+    border: 1px solid black;
+  }
+.dash_row
+{
+	margin-top: 22px !important;
+}
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #fff !important;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.card-header a
+{
+	display: block;
+  position: relative;
+
+}
+.card-header  a[aria-expanded="false"]:before {
+   content: "\f078"; /* fa-chevron-down */
+  font-family: 'FontAwesome';
+  position: absolute;
+  right: 0;
+}
+.card-header a[aria-expanded="true"]:after {
+  right: 0;
+	 position: absolute;
+	font-family: 'FontAwesome';
+  content: "\f077"; 
+} 
+.card-header1  a[aria-expanded="false"]:before {
+  padding-right:20px;
+   content: "\f078"; /* fa-chevron-down */
+  font-family: 'FontAwesome';
+  position: absolute;
+  right: 0;
+}
+.card-header1 a[aria-expanded="true"]:after {
+  padding-right:20px;
+  
+  right: 0;
+    font-family: 'FontAwesome';
+  content: "\f077"; 
+   position: absolute;
+
+} 
+
+
+.mar_bottom_20
+{
+	margin-bottom:20px;
+}
+h6
+{
+	padding: 12px 0px;
+}
+#activity span>a
+{
+	padding-left:65px;
+}
+textarea
+{
+	height:120px !important;
+}
+label
+{
+	padding-top:30px;
+}
+.button-top
+{
+	margin-top:30px !important;
+}
+#recentdraft label
+{
+	padding-left:65px;
+}
+.form-check
+{
+margin-top:20px;
+}
+
+.navbar
+{
+	position: fixed !important;
+    z-index: 999 !important;
+    width: 1366px;
+}
+.sidebar 
+{
+	    margin-top: 55px !important;
+}
+.container-fluid
+{
+	margin-top:55px !important;
+}
+
+.table_btn
+{
+	margin-top:0px !important;
+}
+table
+{
+
+font-size:12px !important;
+height:50%;
+}
+.author_td
+{
+	width:423px !important;
+}
+.page_control
+{
+	width:86px !important;
+}
+
+.modal-header button
+{
+	margin-top: 0px !important;
+	padding:0px 10px !important;
+}
+.datepicker {
+            font-size: 12px;
+        }
+        /* solution 2: the original datepicker use 20px so replace with the following:*/
+.datepicker td, .datepicker th {
+            width: 10px;
+            height:5px;
+        }
+
+#filter button
+{
+	margin-top:0px !important;
+}
+.button
+{
+  margin-top:0px !important;
+}
+.title_input
+{
+  height:100px;
+  width:710px;
+}
+#y
+{
+  display:none;
+}
+.mar_top_20
+{
+  margin-top:20px !important;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+
+
+
+}
+@media (max-width: 991px) {
+  
+  
+
+
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	
+}
+
+@media (max-width: 767px) {
+	
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+  display: none;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+.mar_right_20
+{
+  margin-right:20px;
+}
+.mar_top_20
+{
+  margin-top: 20px;
+}
+#edit_pub
+{
+  display:none;
+}
+#status,#result
+{
+  font-weight: bolder;
+
+}
+#mit
+{
+  display:none;
+}
+#visi
+{
+  display: none;
+}
+#myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myTable {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}

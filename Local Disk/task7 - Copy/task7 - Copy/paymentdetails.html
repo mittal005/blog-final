@@ -1,0 +1,711 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>paytm</title>
+<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/font.css" rel="stylesheet" type="text/css" media="all" />
+    
+    
+    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type='text/javascript' src='script/script.js'></script>
+    <script type='text/javascript' src='script/script7.js'></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap" rel="stylesheet">
+
+    
+    
+    
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Online Recharge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+
+<!--//meta data-->
+
+       
+</head>
+
+
+    
+<!--    -------------------------------------------------------header------------------------------------------------------------------------>
+
+    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #021138;border: none">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage"><h3 style="color: white;font-family: 'Nanum Gothic', sans-serif;"><img src="images/iconfinder__Leaf_circle__1156626%20(1).png" width="30px" height="30px" style="margin-right: 10px;">EC-Recharge</h3></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+    
+       
+        <li style="color: black"><a  href="index.html" ><i class="fa fa-user" style="font-size:20px;color:white"></i><h10 style="color: white">LOGOUT</h10></a></li>
+      </ul>
+        
+        
+        
+        <div class="nav2">
+          <ul class="nav navbar-nav navbar-right" >
+               <li><a href="#about"style="color: black"><h1>MENU</h1></a></li>
+
+        <li><a href="indexcopy1.html"style="color: black" >Mobile</a></li>
+        <li><a href="electricity%20.html"style="color: black">Electricity</a ></li>
+
+        
+        <li><a href="phone.html"style="color: black">phone</a></li>
+        <li><a href="metro.html"style="color: black">Metro</a></li>
+          
+
+        <li><a href="broadband.html">Brandbord</a></li>
+
+    
+      </ul>
+    </div>
+  </div>
+    </div>
+</nav> 
+        
+            
+	
+      
+        
+      <div><img src="images/pngtree-vector-illustration-time-is-money-flat-cartoon-style-png-image_1727525.jpg" width="200px" height="200px" style="display: block;margin-left: auto;margin-right: auto;margin-top: 40px;"></div>
+        <div style="text-align: center;"><h1 style="font-family: 'Nanum Gothic', sans-serif ! important;">SELECT THE PAYMENT DETAILS</h1></div>
+        
+        
+        
+        
+        
+        
+       <div class="container">
+    
+
+      <div class="row">
+       
+        <div class="col-sm-12">
+       
+          
+            <div class="row">
+              <div class=" pay col-sm-6" style="margin-top: 40px;">
+                  
+                      
+                <div class="form-group">
+                                            <label for="email" class="col-sm-2 control-label" style="padding-top: 5px">
+                                               Amount:</label>
+                                            <div class="col-sm-10" style="mar">
+                                                <input type="email" class="form-control"  id="walletamount"  placeholder="Username"  readonly  style="background-color: white;border: none;box-shadow: none"onclick="addMoney()" >
+                                            </div>
+                                        </div>
+                   </div>
+                
+                 </div>
+ 
+
+    
+               
+            
+
+<!--=================================================credit card validation======================================-->
+
+    
+                <script>
+                  function eb(){
+         
+                  var card= document.getElementById("card").value;
+          var month5= document.getElementById("month5").value;
+                       var year8= document.getElementById("year8").value;
+         var cvv= document.getElementById("cvv").value;
+            
+               if(card==0){
+                document.getElementById("card-error").innerHTML = "enter a valid no";
+                
+            }
+             else if (isNaN(card)){
+                   document.getElementById("card-error").innerHTML = "it is not a nummber";
+                
+            }
+            else if(card.length!==16){
+                 document.getElementById("card-error").innerHTML = "enter 16 digit id";
+                
+            }
+            else {
+                document.getElementById("card-error").innerHTML = "";
+            }
+                      
+                      
+                   
+                      
+                        
+                      
+            if(month5 == "month6"){
+                document.getElementById("month7").innerHTML = "select month";
+
+            }
+          else {
+                document.getElementById("month7").innerHTML = "";
+            }     
+                
+                       
+                      
+                      
+                      if(year8== "year9"){
+                document.getElementById("year10").innerHTML = "select year";
+
+            }
+          else {
+                document.getElementById("year10").innerHTML = "";
+            } 
+              
+                 
+                      
+                      
+                      
+                      if(cvv==0){
+                document.getElementById("cvv-error").innerHTML = "enter a valid no";
+                
+            }
+             else if (isNaN(cvv)){
+                   document.getElementById("cvv-error").innerHTML = "it is not a nummber";
+                
+            }
+            else if(cvv.length!==3){
+                 document.getElementById("cvv-error").innerHTML = "enter 3 digit id";
+                
+            }
+            else {
+                document.getElementById("cvv-error").innerHTML = "";
+            }
+                      
+                      
+                          
+    if(card!==0 && !isNaN(card) && card.length==16 &&  year !==0 && !isNaN(year) && year.length==3 && cvv !==0 && !isNaN(cvv) && cvv.length==3){
+         
+        
+        window.location.href="e1.html";
+        
+                  }
+                  }
+                
+            
+            </script>
+         
+           
+        
+    
+        
+    
+<button class="tablink" onclick="openPage('Home', this, '#818181 ')"  style="font-family: 'Nanum Gothic', sans-serif;font-weight: 600;background-color: white !important;border: none; color: black ;margin-bottom: 40px;margin-top: 40px">CREDIT </button>
+<button class="tablink" onclick="openPage('News', this, '#818181 ')" id="defaultOpen" style="background-color: white !important;border: none;margin-bottom: 40px;margin-top: 40px">DEBIT </button>
+<button class="tablink" onclick="openPage('Contact', this, '#818181 ')" style="background-color: white !important;border: none;margin-bottom: 40px;margin-top: 40px">NET BANKING</button>
+
+
+<div id="Home" class="tabcontent">
+ <h3 style="background-color: white!important;font-family: 'Nanum Gothic', sans-serif;"> ENTER YOUR DETAIS</h3>
+ 
+            <div style="margin-top: 20px">
+                             <input type="text"  class="val"placeholder="Enter the valid crad no"  id="card" style="border: 1px solid #ebeaea;" />
+                           </div>
+             <p id="card-error"style=" font-family: 'Nanum Gothic', sans-serif;color: red"></p>
+    
+    
+     <div class="agileits-select"  style="margin-top: 20px">
+                                
+              <select  class="mobile-recharge-dropdown" name="operator" id="month5" style="width: 100px;height: 40px">
+                       <option value="month6">Month</option>
+  <option value="january">January.</option>
+  <option value="february" id="q">February.</option>
+  <option value="march">March.</option>
+  <option value="april">April.</option>
+<option value="may">May.</option>
+                   <option value="">June.</option>
+  <option value="july" id="q">July.</option>
+  <option value="august">August.</option>
+  <option value="">september</option>
+<option value="">october</option>
+                    <option value="">november</option>
+<option value="">december</option>
+</select>
+              
+                <select  class="mobile-recharge-dropdown" name="operator" id="year8" style=" width: 100px;height: 40px; margin-left: 10px" >
+                       <option value="year9">year</option>
+  <option value="2019">2019</option>
+  <option value="" id="q">2020</option>
+  <option value="">2021</option>
+  <option value="">2022</option>
+<option value="">2023</option>
+                   <option value="">2024</option>
+  <option value="" id="q">2025</option>
+  <option value="">2026</option>
+  <option value="">2027</option>
+<option value="">2028</option>
+                    <option value="">2029</option>
+<option value="">2030</option>
+</select>
+              
+                                </div>
+                               
+             <p id="month7"style=" font-family: 'Nanum Gothic', sans-serif;float: left;color: red"></p>
+    <p id="year10"style=" font-family: 'Nanum Gothic', sans-serif;margin-left: 130px;color: red"></p>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+         
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            
+            <div style="margin-top: 20px">
+                             <input type="password"  class="val"placeholder="Enter the cvv"  id="cvv" style="border: 1px solid #ebeaea; width: 270px;" />
+                           </div>
+            
+              <p id="cvv-error"style=" font-family: 'Nanum Gothic', sans-serif;color: red"></p>
+            
+            
+             <input type="submit" class="submit" value="Proceed" onclick="eb()"  style="margin-top: 20px;margin-bottom: 20px;" >
+  
+</div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+<!--        =========================================================debit card validation=====================================   -->
+            
+
+<div id="News" class="tabcontent">
+  <h3 style="background-color: white!important;font-family: 'Nanum Gothic', sans-serif;"> ENTER YOUR DETAILS</h3>
+      <div style="margin-top: 20px">
+                             <input type="text"  class="val"placeholder="Enter the valid crad no"  id="card1" style="border: 1px solid #ebeaea;" />
+                           </div>
+             <p id="card-error1"style=" font-family: 'Nanum Gothic', sans-serif;color: red"></p>
+    
+    
+    
+    
+            
+          <div class="agileits-select"  style="margin-top: 20px">
+                                
+              <select  class="mobile-recharge-dropdown" name="operator" id="year1" style="width: 100px;height: 40px">
+                       <option value="month"><h4 style=" font-family: 'Nanum Gothic', sans-serif;">Month</h4></option>
+  <option value="january">January.</option>
+  <option value="february" id="q">February.</option>
+  <option value="march">March.</option>
+  <option value="april">April.</option>
+<option value="may">May.</option>
+                   <option value="">June.</option>
+  <option value="july" id="q">July.</option>
+  <option value="august">August.</option>
+  <option value="">september</option>
+<option value="">october</option>
+                    <option value="">november</option>
+<option value="">december</option>
+</select>
+              
+                <select  class="mobile-recharge-dropdown" name="operator" id="expyear" style=" width: 100px;height: 40px; margin-left: 10px" >
+                       <option value="year" style=" font-family: 'Nanum Gothic', sans-serif;">year</option>
+  <option value="2019">2019</option>
+  <option value="" id="q">2020</option>
+  <option value="">2021</option>
+  <option value="">2022</option>
+<option value="">2023</option>
+                   <option value="">2024</option>
+  <option value="" id="q">2025</option>
+  <option value="">2026</option>
+  <option value="">2027</option>
+<option value="">2028</option>
+                    <option value="">2029</option>
+<option value="">2030</option>
+</select>
+              
+                                </div>
+                               
+             <p id="year-error1"style=" font-family: 'Nanum Gothic', sans-serif;float: left;color: red"></p>
+    <p id="year-error2"style=" font-family: 'Nanum Gothic', sans-serif;margin-left: 100px;color: red"></p>
+    
+            
+            <div style="margin-top: 20px">
+                             <input type="password"  class="val"placeholder="Enter the cvv"  id="cvv1" style="border: 1px solid #ebeaea; width: 270px;" />
+                           </div>
+            
+              <p id="cvv-error1"style=" font-family: 'Nanum Gothic', sans-serif;color: red"></p>
+            
+            
+             <input type="submit" class="submit" value="Proceed" onclick="db()"  style="margin-top: 20px;margin-bottom: 20px;" >
+    
+    
+</div>
+            
+            
+           <script>
+                  function db(){
+         
+                  var card1= document.getElementById("card1").value;
+         var year1= document.getElementById("year1").value;
+                       var expyear= document.getElementById("expyear").value;
+         var cvv1= document.getElementById("cvv1").value;
+            
+               if(card1==0){
+                document.getElementById("card-error1").innerHTML = "enter a valid no";
+                
+            }
+             else if (isNaN(card1)){
+                   document.getElementById("card-error1").innerHTML = "it is not a nummber";
+                
+            }
+            else if(card1.length!==16){
+                 document.getElementById("card-error1").innerHTML = "enter 16 digit id";
+                
+            }
+            else {
+                document.getElementById("card-error1").innerHTML = "";
+            }
+                      
+                      
+                   
+                      
+                      
+            if(year1 == "month"){
+                document.getElementById("year-error2").innerHTML = "select month";
+
+            }
+          else {
+                document.getElementById("year-error2").innerHTML = "";
+            }     
+                
+                       
+                      
+                      
+                      if(expyear== "year"){
+                document.getElementById("year-error1").innerHTML = "select year";
+
+            }
+          else {
+                document.getElementById("year-error1").innerHTML = "";
+            } 
+                      
+                      
+                     
+                      
+                      
+                      
+                      
+                      if(cvv1==0){
+                document.getElementById("cvv-error1").innerHTML = "enter a valid no";
+                
+            }
+             else if (isNaN(cvv1)){
+                   document.getElementById("cvv-error1").innerHTML = "it is not a nummber";
+                
+            }
+            else if(cvv1.length!==3){
+                 document.getElementById("cvv-error1").innerHTML = "enter 3 digit id";
+                
+            }
+            else {
+                document.getElementById("cvv-error1").innerHTML = "";
+            }
+                      
+                      
+                          
+    if(card1 !==0 && !isNaN(card1) && card1.length==16 && year1 !== "Operator1" && expyear !== "year" && cvv1 !==0 && !isNaN(cvv1) && cvv1.length==3){
+        
+        window.location.href="e1.html";
+                  }
+                  }
+                
+            
+            </script>  
+            
+            
+<!--           =====================================================credit card validiation======================================== -->
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+<div id="Contact" class="tabcontent">
+ <h3 style="background-color: white!important;font-family: 'Nanum Gothic', sans-serif;">NETBANKING DETAILS</h3>
+        <p id="eb6"style=" font-family: 'Nanum Gothic', sans-serif;" ></p>
+						
+						
+                                <div class="agileits-select"  style="margin-top: 20px">
+                                <select class="selectpicker show-tick bank" data-live-search="true" id="eb1"  style="width: 100px;height: 40px">
+                                     <option value="Operator1">select bank</option>
+                   
+                                  <option data-tokens="Operator1"><a href="https://facebook.com">STATE BANK OF INDIA</a></option>
+                                  <option data-tokens="Operator2">STATE BANK OF ANDHRA</option>
+                                  <option data-tokens="Operator3">INDIAN BANK</option>
+                                  <option data-tokens="Operator4">COOPERATIVE BANK</option>
+                                  <option data-tokens="Operator5">INDIAN OVERSES BANK</option>
+                                  <option data-tokens="Operator6">AXIZ BANK</option>
+                                  <option data-tokens="Operator7">PSC BANK</option>
+                                </select>
+                                </div>
+                                <p id="eb3"style=" font-family: 'Nanum Gothic', sans-serif; color: red"></p>
+                       
+                        <p id="eb4"style=" font-family: 'Nanum Gothic', sans-serif; color: red"></p>
+                        
+                        
+                         
+                            
+                                  <div style="margin-top: 20px">
+                           
+                                <input type="submit" id="bank1"value="Proceed" onclick="net()"  style="background-color: #0e0b58;border-color: #0e0b58; color: white !important;margin-top: 20px;width: 100px;height: 40px;font-size: 15px;" >
+                            
+				        
+						
+																							
+						</div>	
+						</div>
+                        
+        
+      
+  
+        
+        </div>
+    </div>
+    </div>
+        
+     
+
+
+   
+
+    
+    <script>
+    
+    
+     function net(){
+         
+         
+         
+         
+         
+         
+         
+           var eb1= document.getElementById("eb1").value;
+        
+         
+       
+    
+    
+    
+    if(eb1 == "Operator1"){
+                document.getElementById("eb3").innerHTML = "SELECT YOUR CORRECT BANK";
+
+            }
+          else {
+                document.getElementById("eb3").innerHTML = "";
+            }
+       
+
+         
+          
+       
+        
+           
+          
+    
+    if(eb1 !== "Operator1"  ){
+        
+        window.location.href="https://www.andhrabank.in/netbanking/index-retail.html";
+        
+    }
+    
+    
+    
+     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</div>
+
+
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+                  
+       
+    
+    
+         
+<!--=============================================================================================================================================-->
+<!--
+           
+
+-->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+       <script>
+      var storedVal = document.getElementById("walletamount");
+    storedVal.value = localStorage.getItem("walletamount");
+      
+      </script>
+    <script src="css/zip.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="css/zip1.js"></script>
+    <script src="css/zip2.js"></script>
+    <script src="css/zip3.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+       
+    </script>
+            
+            
+            
+            
+   
+
+
+<!--================================================================footer================================================================-->
+  
+    
+    
+        <div class="foot" style="margin-top: 100px;" >
+<div class="container-fluid"  style="background-color: #020e40;height: 200px;"> 
+<h2 style="color: white !important;font-size: 10px;font-family: 'Nanum Gothic', sans-serif;"> EC-Recharge</h2>
+    <h2 style="color: white !important;font-size: 10px;font-family: 'Nanum Gothic', sans-serif;">Enjoy Instant, Safe & Secure Money Transfer </h2>
+
+<ul class="boot">
+<li><a href="https://facebook.com"><i class="fa fa-facebook btn" style="font-size: 20px;color:white;display: inline-block;"></i></a></li>
+<li><a href="https://instagram.com"><i class="fa fa-instagram btn" style="font-size: 20px;color:white;display: inline-block;"></i></a></li>
+<li><a href="https://twitter.com"><i class="fa fa-twitter btn" style="font-size: 20px;color: white"></i></a></li>
+<li><a href="https://linkedin.com"><i class="fa fa-linkedin btn" style="font-size: 20px;color:white"></i></a></li>
+</ul>
+</div>
+</div>	
+    	
+    
+    
+
+    
+<!--    ========================================================================================================================-->
+	
+			
+
+
+    </body>
+
+</html>

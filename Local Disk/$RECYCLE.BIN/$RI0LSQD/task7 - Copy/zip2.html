@@ -1,0 +1,159 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Checkout example for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
+      <script type='text/javascript' src='css/script5.js'></script>
+        <script type='text/javascript' src='css/script6.js'></script>
+       <script type='text/javascript' src='css/script7.js'></script>
+       <script type='text/javascript' src='css/script8.js'></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/zip.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/zip1.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="images/iconfinder__Leaf_circle__1156626%20(1).png" alt="" width="72" height="72">
+        <h2>Add ur saveings</h2>
+        
+      </div>
+        
+            
+           
+            
+				
+<div class="container" style="background-color:#f9fcfc;height: auto;margin-top: 50px;margin-bottom: 50px;border-radius: 20px;">
+    <div class="row">
+    <div class="col-sm-12">
+        <h2 style="text-align:center; font-family: 'Nanum Gothic', sans-serif;"> SELECT YOUR BANK:</h2>
+       
+                   
+            
+        
+                           
+                    <div >
+		                       
+                         <p id="eb6"style=" font-family: 'Nanum Gothic', sans-serif;" ></p>
+						
+						
+                                <div class="agileits-select"  style="margin-top: 20px">
+                                <select class="selectpicker show-tick bank" data-live-search="true" id="eb1"  style="width: 700px;height: 40px">
+                                     <option value="Operator1">select operator</option>
+                   
+                                  <option data-tokens="Operator1">STATE BANK OF INDIA</option>
+                                  <option data-tokens="Operator2">STATE BANK OF ANDHRA</option>
+                                  <option data-tokens="Operator3">INDIAN BANK</option>
+                                  <option data-tokens="Operator4">COOPERATIVE BANK</option>
+                                  <option data-tokens="Operator5">INDIAN OVERSES BANK</option>
+                                  <option data-tokens="Operator6">AXIZ BANK</option>
+                                  <option data-tokens="Operator7">PSC BANK</option>
+                                </select>
+                                </div>
+                                <p id="eb3"style=" font-family: 'Nanum Gothic', sans-serif;"></p>
+                       
+                        <p id="eb4"style=" font-family: 'Nanum Gothic', sans-serif;"></p>
+                        
+                        
+                         
+                            
+                                  <div style="margin-top: 20px">
+                           
+                                <input type="submit" class="submit "  id="bank1"value="Proceed" onclick="eb()"  style="background-color: aqua;border-color: aqua;margin-top: 20px;" >
+                            
+				        
+						
+																							
+						</div>	
+						</div>
+                        
+        
+      
+  
+        
+        </div>
+    </div>
+    </div>
+        
+     
+
+
+   
+
+    
+    <script>
+    
+    
+     function eb(){
+         
+         
+         
+         
+         
+         
+         
+           var eb1= document.getElementById("eb1").value;
+        
+         
+       
+    
+    
+    
+    if(eb1 == "Operator1"){
+                document.getElementById("eb3").innerHTML = "SELECT YOUR CORRECT BANK";
+
+            }
+          else {
+                document.getElementById("eb3").innerHTML = "";
+            }
+       
+
+         
+          
+       
+        
+           
+          
+    
+    if(eb1 !== "Operator1"  ){
+        
+        window.location.href="";
+        
+    }
+    
+    
+    
+     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+    
+    
+      </div>
+    
+      
+  </body>
+</html>

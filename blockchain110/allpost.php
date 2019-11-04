@@ -20,7 +20,15 @@ $draft_query="SELECT Status FROM posts WHERE Status='Draft'";
 $select_draft_query=mysqli_query($connection,$draft_query);
 if($select_draft_query){
      $draft_posts = mysqli_num_rows($select_draft_query); 
-               }  
+               } 
+
+  $query="SELECT * FROM trash";
+$select_alltrash=mysqli_query($connection,$query);
+
+if($select_alltrash){
+     $total_trash = mysqli_num_rows($select_alltrash); 
+     
+          }                 
 
 ?>
 <!-- ------------------------------sorting------------------ -->
@@ -43,10 +51,19 @@ if($select_draft_query){
         <div class="row dash_row outer-w3-agile">
             <div class="col-md-12">
               <div class="row">
-          <div class="col-md-12">
-         <a href="allpost.php?show=all"> All (<span><?php echo $total_posts;    ?></span>) </a> |  <a href="allpost.php?show=published"> Published </a> (<span><?php echo $publish_posts;   ?></span>)  | <a href="allpost.php?show=draft">  Draft </a>(<span><?php echo $draft_posts; ?></span>)
+          <div class="col-md-6">
+         <a href="allpost.php?show=all"> All (<span><?php echo $total_posts;    ?></span>) </a> |  <a href="allpost.php?show=published"> Published </a> (<span><?php echo $publish_posts;   ?></span>)  | <a href="allpost.php?show=draft">  Draft </a>(<span><?php echo $draft_posts; ?></span>)|<a href="allpost.php?show=trash"> Trash </a> (<span><?php echo $total_trash;   ?></span>)
 
         </div>
+         <div class="col-md-3 offset-1">
+    <form action="" method="post">
+    <input type="text" name="search" class="form-control" placeholder="Search By Title">
+  </div>
+  <div class="col-md-2 ">
+    <input type="submit" name="selectByTitle" class="btn btn-primary" value="Search">
+     <!-- <button type="button" class="btn btn-primary" >Apply</button> -->
+      </form>
+  </div>
 </div>
       
 <div class="row dash_row" id="filter">
@@ -132,9 +149,10 @@ if($select_draft_query){
   <div class="col-md-2">
     <form action="" method="post">
     <select class="form-control" name="byDate">
-      <option>All Dates</option>
+      <option value="alldates">All Dates</option>
       <?php
-                           // $connection=mysqli_connect('localhost','root','','admin');
+                           // $connection=mysqli_connect('localhost','root','','admin'); 
+      
                            $select_query="SELECT DISTINCT onlyDate FROM posts";
                            $select_all_categories_query=mysqli_query($connection, $select_query);
                 if (!$select_all_categories_query) {
@@ -174,13 +192,14 @@ if($select_draft_query){
                    <th>Title</th>
                     <th>Author</th>
                      <th>Categories</th>
-                     <th>Tags</th>
-                     <th>Comment</th>
+                     <!-- <th>Tags</th>
+                     <th>Comment</th> -->
                      <th>Date</th>
                      <th>Edit</th>
                    
                    </thead>
     <tbody>
+
 
       <?php if(isset($_GET['show'])){
         $show=$_GET['show'];
@@ -188,7 +207,7 @@ if($select_draft_query){
       else{
   $show='';
 }
-if (!isset($_POST['selectByCategory']) && !isset($_POST['selectByDate'])) {
+if (!isset($_POST['selectByCategory']) && !isset($_POST['selectByDate']) && !isset($_POST['selectByTitle'])) {
 switch ($show) {
              case 'published';
                include "published_posts.php"; 
@@ -202,7 +221,9 @@ switch ($show) {
                case 'sort':
               include "sort.php"; 
                break;
-
+               case 'trash':
+                include "trash.php"; 
+                 break;
               default:
                include "allposts.php"; 
                break;
@@ -218,12 +239,26 @@ if (isset($_POST['selectByCategory'])) {
 <!-- // --------------------------------selectbydate--------------------------------- -->
 <?php
 if (isset($_POST['selectByDate'])) {
+  
+$publihedOn=$_POST['byDate'];
+if ($publihedOn=='alldates') {
+  header("Location:allpost.php");
+}else{
+  include "includes/selectByDate_posts.php";
+}
 
-include "includes/selectByDate_posts.php";
 
 }
       ?>
-   
+<!-- ------------------------------------searchbytitle---------------------------------- -->   
+
+<?php
+     
+if (isset($_POST['selectByTitle'])) {
+  include "includes/searchByTitle.php";
+
+}
+         ?>
             </div>
 
                 </div>

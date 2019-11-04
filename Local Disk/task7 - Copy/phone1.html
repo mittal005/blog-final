@@ -1,0 +1,117 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Checkout example for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
+         
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/zip.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/zip1.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-light" style="background-color: yellow">
+      
+      
+     
+
+<body>
+
+     
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="images/iconfinder__Leaf_circle__1156626%20(1).png" alt="" width="72" height="72">
+        <h2>Add your Savings</h2>
+        
+      </div>
+
+      <div class="row">
+       
+        <div class="col-md-12 order-md-1">
+          <h4 class="mb-3">Payment Amount</h4>
+
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="firstName" >added your amount</label>
+                <input type="text" class="form-control" id="walletamount" placeholder="Enter the Amount" value="" required>
+                <div id="error-amount">
+                 
+                </div>
+              </div>
+            
+            </div>
+
+       
+           
+          
+            <hr class="mb-4">
+           <button  p class="btn btn-primary btn-lg btn-block" type="submit" onclick="addMoney()" style="background-color: aqua;border: none" >submit</button>
+            <div> <button  p class="btn btn-primary btn-lg btn-block" type="submit" style="background-color: aqua;border: none;margin-top: 10px;" ><a href="index.html" style="color: white;text-decoration: none">cancel</a></button></div>
+            
+        
+              
+<!--          </form>-->
+        </div>
+      </div>
+        
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+      <script>
+       function addMoney() {
+  var walletamount = document.getElementById("walletamount").value;
+            localStorage.setItem("walletamount", walletamount);
+             walletamount = localStorage.getItem("walletamount");
+                if(isNaN(walletamount) || walletamount==0){
+              document.getElementById('error-amount').innerHTML="Enter a valid amount";
+           
+        }
+           else{window.location.href ="phone2.html"}
+          
+         }
+
+
+      </script>
+  
+   
+    <script>
+     
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+           
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+       
+    </script>
+  </body>
+</html>

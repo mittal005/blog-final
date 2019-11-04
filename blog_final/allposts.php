@@ -89,7 +89,7 @@ while($row=mysqli_fetch_array($select_allposts)) {
 
     
     <tr>
-    <td><input type="checkbox" class="checkthis" /></td>
+    <td><!-- <input type="checkbox" class="checkthis" /> --></td>
     <td class="author_td"><label><?php echo $title;  ?></label></td>
     <td><label><?php echo $username;  ?></label></td>
     <td class="page_control"><label><?php echo $categoryName;  ?></label></td>

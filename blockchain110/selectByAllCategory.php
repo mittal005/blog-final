@@ -24,8 +24,8 @@ $select_by_category_query="SELECT * FROM posts  WHERE   categoryName='{$selectBy
     <td><label><?php echo $username;  ?></label></td>
     <td class="page_control"><label><?php echo $categoryName;  ?></label></td>
 
-    <td><label></label></td>
-    <td><label></label></td>
+    <!-- <td><label></label></td>
+    <td><label></label></td> -->
    
     <td><?php if ($draftTime != "") {
                  echo    $draftTime; 

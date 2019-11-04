@@ -44,7 +44,7 @@ if($select_draft_query){
             <div class="col-md-12">
               <div class="row">
           <div class="col-md-12">
-         <a href="allpost.php?show=all"> All (<span><?php echo $total_posts;    ?></span>) </a> |  <a href="allpost.php?show=published"> Published </a> (<span><?php echo $publish_posts;   ?></span>)  | <a href="allpost.php?show=draft">  Draft </a>(<span><?php echo $draft_posts; ?></span>)
+         <a href="allpost.php?show=all"> All </a> (<span><?php echo $total_posts;    ?></span>)  |  <a href="allpost.php?show=published"> Published </a> (<span><?php echo $publish_posts;   ?></span>)  | <a href="allpost.php?show=draft">  Draft </a>(<span><?php echo $draft_posts; ?></span>)
 
         </div>
 </div>
@@ -170,7 +170,7 @@ if($select_draft_query){
                    
                    <thead>
                    
-                   <th><input type="checkbox" id="checkall" /></th>
+                   <th><!-- <input type="checkbox" id="checkall" /> --></th>
                    <th>Title</th>
                     <th>Author</th>
                      <th>Categories</th>

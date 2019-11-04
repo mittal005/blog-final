@@ -47,7 +47,18 @@ if (isset($_POST['delete_post'])) {
         
         <div class="row dash_row">
         <div class="col-md-12 outer-w3-agile">
-          <h5 class="text-center">All Users</h5>
+    <a href="alluser.php"><h5  class="text-center">All Users</h5></a>
+          <div class="row dash_row" style="margin-bottom: 20px;">
+          <div class="col-md-3">
+    <form action="" method="post">
+    <input type="text" name="search" class="form-control" placeholder="Search By Username">
+  </div>
+  <div class="col-md-2 ">
+    <input type="submit" name="selectByUsername" class="btn btn-primary" value="Search">
+     <!-- <button type="button" class="btn btn-primary" >Apply</button> -->
+      </form>
+  </div>
+</div>
               <div class="table-responsive">
 
                 
@@ -55,22 +66,91 @@ if (isset($_POST['delete_post'])) {
                 
                    <thead>
                    
-                   <th><input type="checkbox" id="checkall" /></th>
+                   <th><!-- <input type="checkbox" id="checkall" /> --></th>
                    <th>username</th>
                     <th>Name</th>
                      <th>E-Mail</th>
                      <th>Role</th>
-                     <th>Post</th>
+                     <th>Post count</th>
                      
                       <th>Quick Edit</th>
                       
                        
                    </thead>
     <tbody>
+
     <?php
+         if (!isset($_POST['selectByUsername'])) {
+           
          
               //$connection=mysqli_connect('localhost','root','','admin');
               $query="SELECT * FROM newuser";
+$select_newuser=mysqli_query($connection,$query);
+while($row=mysqli_fetch_array($select_newuser)) {
+  $id=$row['id'];
+  $username=$row['username'];
+  $email=$row['email'];
+  $firstname=$row['firstname'];
+   $lastname=$row['lastname'];
+    $role=$row['role'];
+    $Biographicalinfo=$row['Biographicalinfo'];
+  
+
+            ?>       
+
+    
+    <tr>
+    <td><!-- <input type="checkbox" class="checkthis" /> --></td>
+    <td ><label><?php echo $username;  ?></label></td>
+    <td><label><?php echo $firstname;  ?></label></td>
+    <td ><label><?php echo $email;  ?></label></td>
+    <td><label><?php echo $role;  ?></label></td>
+<?php
+
+$post_query="SELECT * FROM posts WHERE username='{$username}'";
+$post_select_query=mysqli_query($connection,$post_query);
+if (!$post_select_query) {
+    printf("Error: %s\n", mysqli_error($connection));
+    exit();
+  }  
+if($post_select_query){
+     $row_user = mysqli_num_rows($post_select_query); 
+    
+     }    
+
+
+?>
+
+    <td><label><?php echo $row_user;  ?></label></td>
+    <td><a class="nav-link " href="#" id="actionmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-ellipsis-v font-24"></i>
+        </a>
+
+
+      <div class="dropdown-menu dropdown-menu-right" id="actionmenulist" aria-labelledby="actionmenu">
+          <a class="dropdown-item" href="edituser.php?edit=<?php echo $id;   ?>">Edit<i class="fa fa-pencil pad_left_40"></i
+            ></a>
+          <a class="dropdown-item quickEditPost" data-title="Edit" data-id="<?php echo $id;  ?>" >Quick Edit<i class="fa fa-magic pad"></i></a>
+           <a class="dropdown-item deletePost" data-title="Delete" data-id="<?php echo $id;  ?>">Trash<i class="fa fa-trash padd"></i
+            ></a>
+        </div>
+</td>
+    </tr>
+    
+    </tbody>
+    <?php
+
+     }
+}
+    ?>
+    <!-- ------------------------------------------------------------------------- -->
+    <?php
+     
+if (isset($_POST['selectByUsername'])) {
+         $search= $_POST['search'];  
+         
+              //$connection=mysqli_connect('localhost','root','','admin');
+    $query="SELECT * FROM newuser WHERE username LIKE '%$search%'";
 $select_newuser=mysqli_query($connection,$query);
 while($row=mysqli_fetch_array($select_newuser)) {
   $id=$row['id'];
@@ -87,7 +167,7 @@ while($row=mysqli_fetch_array($select_newuser)) {
 
     
     <tr>
-    <td><input type="checkbox" class="checkthis" /></td>
+    <td><!-- <input type="checkbox" class="checkthis" /> --></td>
     <td ><label><?php echo $username;  ?></label></td>
     <td><label><?php echo $firstname;  ?></label></td>
     <td ><label><?php echo $email;  ?></label></td>
@@ -112,8 +192,13 @@ while($row=mysqli_fetch_array($select_newuser)) {
     <?php
 
      }
-
+}
     ?>
+
+
+
+
+  
         
 </table>
 

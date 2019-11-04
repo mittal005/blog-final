@@ -2,85 +2,162 @@
 <?php
 if(isset($_POST['saveDraft']))
 {
-  
-    $username=$_SESSION['username'];
+
+  $username=$_SESSION['username'];
     $user_id=$_SESSION['user_id'];
+    if(!empty($_POST['addTitle'])) {
     $addTitle=$_POST['addTitle'];
+  }else{
+        $addTitle="no title";
+      }
+      if(!empty($_POST['postContent'])) {
     $postContent=$_POST['postContent'];
+  }else{
+    $postContent="no content";
+  }
      $statusdropdown=$_POST['statusdropdown'];
+     if(!empty($_POST['visible1'])) {
         $visible=$_POST['visible1'];
+      }else{
+        $visible="";
+      }
+      if(!empty($_POST['x'])) {
         $x=$_POST['x'];
+      }else{
+        $x="";
+      }
     date_default_timezone_set("Asia/Kolkata");
      $current_time = date("F j, Y, g:i a");
+     if(!empty($_POST['selectCategory'])) {
+     $selectCategory=$_POST['selectCategory'];
+   }else{
+        $selectCategory="";
+   }
+   if(!empty($_POST['category_name'])) {
      $category_name=$_POST['category_name'];
+   }else{
+       $category_name="no category name";
+   }
      $category_type=$_POST['category_type'];
+     if(!empty($_POST['seo_title'])) {
       $seo_title=$_POST['seo_title'];
+    }else{
+      $seo_title="no title";
+    }
+    if(!empty($_POST['description'])) {
     $description=$_POST['description'];
+  }else{
+    $description="no description";
+  }
+  if(!empty($_POST['url'])) {
      $url=$_POST['url'];
+   }else{
+    $url="no url";
+   }
+   if(!empty($_POST['schema'])) {
      $schema=$_POST['schema'];
+   }else{
+    $schema="no schema";
+   }
      date_default_timezone_set("Asia/Kolkata");
      $current_time= date('d-m-y');
      // ------------------------------------------
-     if(isset($_FILES) & !empty($_FILES)){
-  $post_image=$_FILES['post_image']['name'];
-  $type = $_FILES['post_image']['type'];
+      $_FILES['post_image']['name'];
+      if(!file_exists($_FILES['post_image']['name'])){ 
+     //if(!empty($_POST['post_image'])) {
+   $post_image=$_FILES['post_image']['name'];
+   $type = $_FILES['post_image']['type'];
    $post_image_temp=$_FILES['post_image']['tmp_name'];
    $extension = substr($post_image, strpos($post_image, '.') + 1);
-   if(isset($post_image) && !empty($post_image)){
-      if(($extension == "jpg" || $extension == "jpeg" || $extension == "png")){
-if ($statusdropdown == 'Draft') {
- $query="INSERT INTO posts(username,user_id,Title,Content,Status,Visibility,Format,draftTime,categoryName,categoryType,seo_title,description, url,seo_schema,image, onlyDate)VALUES('$username','$user_id','$addTitle','$postContent','$statusdropdown','$visible','$x','$current_time','$category_name','$category_type','$seo_title','$description','$url','$schema','$post_image','$current_time')";
+
+   if ($statusdropdown == 'Draft') {
+ $query="INSERT INTO posts(username,user_id,Title,Content,Status,Visibility,Format,draftTime,selectCategory,categoryName,categoryType,seo_title,description, url,seo_schema,image, onlyDate)VALUES('$username','$user_id','$addTitle','$postContent','$statusdropdown','$visible','$x','$current_time','$selectCategory','$category_name','$category_type','$seo_title','$description','$url','$schema','$post_image','$current_time')";
   $create_post_query=mysqli_query($connection,$query);
   if (!$create_post_query) {
     printf("Error: %s\n", mysqli_error($connection));
     exit();
-  }else{
-    echo "string";
   }
 }
 // ----------------------------------------
 if ($statusdropdown == 'Publish') {
- $query="INSERT INTO posts(username,user_id,Title,Content,Status,Visibility,Format,publishTime,categoryName,categoryType,seo_title,description, url,seo_schema,image)VALUES('$username','$user_id','$addTitle','$postContent','$statusdropdown','$visible','$x','$current_time','$category_name','$category_type','$seo_title','$description','$url','$schema','$post_image')";
+ $query="INSERT INTO posts(username,user_id,Title,Content,Status,Visibility,Format,publishTime,selectCategory,categoryName,categoryType,seo_title,description, url,seo_schema,image, onlyDate)VALUES('$username','$user_id','$addTitle','$postContent','$statusdropdown','$visible','$x','$current_time','$selectCategory','$category_name','$category_type','$seo_title','$description','$url','$schema','$post_image','$current_time')";
   $create_post_query=mysqli_query($connection,$query);
   if (!$create_post_query) {
         die('query FAILED . mysqli_error($connection)');
                              }
 }
 
+   }
+ }
+   
+      //if(isset($post_image) && !empty($post_image)){
+    // if($post_image != "") {
+     
+      // if(($extension == "jpg" || $extension == "jpeg" || $extension == "png") && $type == "image/jpeg"){
+      // $fmsg = "File size should be only in jpeg and png file";
+      // }else {
+        
+      // }
+    // break;
+    //}
+//     else{
+// if ($statusdropdown == 'Draft') {
+//  $query="INSERT INTO posts(username,user_id,Title,Content,Status,Visibility,Format,draftTime,selectCategory,categoryName,categoryType,seo_title,description, url,seo_schema,image, onlyDate)VALUES('$username','$user_id','$addTitle','$postContent','$statusdropdown','$visible','$x','$current_time','$selectCategory','$category_name','$category_type','$seo_title','$description','$url','$schema','$post_image','$current_time')";
+//   $create_post_query=mysqli_query($connection,$query);
+//   if (!$create_post_query) {
+//     printf("Error: %s\n", mysqli_error($connection));
+//     exit();
+//   }
+// }
+// // ----------------------------------------
+// if ($statusdropdown == 'Publish') {
+//  $query="INSERT INTO posts(username,user_id,Title,Content,Status,Visibility,Format,publishTime,selectCategory,categoryName,categoryType,seo_title,description, url,seo_schema,image)VALUES('$username','$user_id','$addTitle','$postContent','$statusdropdown','$visible','$x','$current_time','$selectCategory','$category_name','$category_type','$seo_title','$description','$url','$schema','$post_image')";
+//   $create_post_query=mysqli_query($connection,$query);
+//   if (!$create_post_query) {
+//         die('query FAILED . mysqli_error($connection)');
+//                              }
+// }
+// }
+
+    
+
+  
+  
 // ------------------------------------------------------
-$query_image="INSERT INTO mediaLibrary(username,image)VALUES('$username','$post_image')";
-$create_image_query=mysqli_query($connection,$query_image);
-  if (!$create_image_query) {
-    printf("Error: %s\n", mysqli_error($connection));
-    exit();
-  }
+//  if(!empty($post_image)) {
+// $query_image="INSERT INTO mediaLibrary(username,image)VALUES('$username','$post_image')";
+// $create_image_query=mysqli_query($connection,$query_image);
+//   if (!$create_image_query) {
+//     printf("Error: %s\n", mysqli_error($connection));
+//     exit();
+//   }
 
-         if(move_uploaded_file($post_image_temp,"gallery/$post_image")){
-          $smsg = "Uploaded Successfully";
+//          if(move_uploaded_file($post_image_temp,"gallery/$post_image")){
+//           $smsg = "Uploaded Successfully";
 
-        }else{
-          $fmsg = "Failed to Upload File";
-        }
-      }else{
-        $fmsg = "File size should be only in jpeg and png file";
-      }
-    }else{
-      $fmsg = "Please Select a File";
-    }
-   ;
+//         }else{
+//           $fmsg = "Failed to Upload File";
+//         }
+//       }
+    
+      //}
+   //  else{
+   //    $fmsg = "Please Select a File";
+   //  }
+   // ;
 
-}
+//}
   //$connection=mysqli_connect('localhost','root','','admin');
 
 
-}
+
 // ------------------------------------------------------------
 if(isset($_POST['add_new_category']))
 {
   
   $category_name=$_POST['category_name'];
      $category_type=$_POST['category_type'];
-  $connection=mysqli_connect('localhost','root','','admin');
+ // $connection=mysqli_connect('localhost','root','','admin');
 
 
  $query="INSERT INTO category(name,parentcategory)VALUES('$category_name','$category_type')";
@@ -227,9 +304,9 @@ if(isset($_POST['add_new_category']))
      <div id="activity" class="collapse show" aria-labelledby="activityone" data-parent="publish">
        <div class="card-body">
 <div class="row">
-       <div class="col-md-6"> <button class="btn btn-primary">Preview</button></div><div class="col-md-6"
+       <div class="col-md-6"> <!-- <button class="btn btn-primary">Preview</button> --></div><div class="col-md-6"
         ><button class="btn btn-primary" id="btn1" name="saveDraft">Save Draft</button></div></div>
-       <br>
+       <!-- <br> -->
        <i class="fa fa-key"></i><span class="mar_right_20">Status:</span><label id="status" class="mar_right_20"></label><a href="#" onclick="dis()">Edit</a>
        <br>
        <div id="edit_pub">
@@ -257,7 +334,7 @@ if(isset($_POST['add_new_category']))
 
 </div>
 <br><br>
-       <button class="btn btn-primary mar_top_20">Update</button>         
+      <!--  <button class="btn btn-primary mar_top_20">Update</button>   -->       
    </div>
      </div>
             </div>
@@ -337,16 +414,16 @@ if(isset($_POST['add_new_category']))
   <div id = "content1">
      <?php
                            //$connection=mysqli_connect('localhost','root','','admin');
-                           $select_query="SELECT name FROM category ORDER BY id DESC LIMIT 5";
+                           $select_query="SELECT DISTINCT selectCategory FROM posts ORDER BY id DESC LIMIT 5";
                            $select_all_categories_query=mysqli_query($connection, $select_query);
                 if (!$select_all_categories_query) {
     printf("Error: %s\n", mysqli_error($connection));
     exit();
   }
                             while($row=mysqli_fetch_array($select_all_categories_query)){
-                              $name=$row['name'];
+                              $selectCategory=$row['selectCategory'];
                                               ?>
-                    <input type="checkbox" class="mar_top_20"> <?php echo $name;    ?><br>
+            <input type="checkbox" class="mar_top_20" name="selectCategory" value="<?php echo $selectCategory;    ?>"> <?php echo $selectCategory;    ?><br>
                                         
                                         <?php
                                       }
@@ -370,17 +447,17 @@ if(isset($_POST['add_new_category']))
     <option>Parent Category</option>
     <?php
                            //$connection=mysqli_connect('localhost','root','','admin');
-                           $select_query="SELECT name FROM category";
+                           $select_query="SELECT DISTINCT parentcategory FROM category";
                            $select_all_categories_query=mysqli_query($connection, $select_query);
                 if (!$select_all_categories_query) {
     printf("Error: %s\n", mysqli_error($connection));
     exit();
   }
                             while($row=mysqli_fetch_array($select_all_categories_query)){
-                              $name=$row['name'];
+                              $parentcategory=$row['parentcategory'];
                          
                     ?>
-                                        <option> <?php echo $name;    ?></option>
+                                        <option> <?php echo $parentcategory;    ?></option>
                                        
                                      <?php
                                       }
@@ -401,7 +478,7 @@ if(isset($_POST['add_new_category']))
 
 
 
-<div class="row dash_row mar_bottom_20 outer-w3-agile">
+<!-- <div class="row dash_row mar_bottom_20 outer-w3-agile">
   <div class="col-md-12">
 
 
@@ -433,7 +510,7 @@ if(isset($_POST['add_new_category']))
         </div>
 
   </div>
-</div>
+</div> -->
 
 
 
@@ -654,7 +731,12 @@ document.getElementById('btn1').innerHTML=value;
     })()
   </script>
 <script>
-
+const file = this.files[0];
+const  fileType = file['type'];
+const validImageTypes = ['image/gif', 'image/jpeg', 'image/png'];
+if (!validImageTypes.includes(fileType)) {
+   console.log('empty');
+}
 </script>
 </body>
 

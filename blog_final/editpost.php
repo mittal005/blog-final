@@ -236,13 +236,7 @@ if ($statusdropdown == 'Publish') {
 
 <div class="row dash_row outer-w3-agile">
   <div class="col-md-12">
-<div class="row dash_row outer-w3-agile">
-  <div class="col-md-12">
-
-<!-- ------------------------- -->
-
-
-<div id="format">
+    <div id="format">
           <div class="card">
 <div class="card-header" id="glanceone">
       <h5 class="mb-0">
@@ -273,8 +267,7 @@ if ($statusdropdown == 'Publish') {
   </div>
 </div>
 
-<!-- ----------------------------------
-
+<!-- -
  -->
  <div class="row dash_row outer-w3-agile">
   <div class="col-md-12">

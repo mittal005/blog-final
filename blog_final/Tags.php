@@ -65,7 +65,7 @@
         <div class="table-responsive">                
               <table id="mytable" class="table table-bordred table-striped">                  
                    <thead>                   
-                   <th><input type="checkbox" id="checkall" /></th>
+                   <th><!-- <input type="checkbox" id="checkall" /> --></th>
                    <th>Name</th>
                       <th>Description</th>
                     <th>Slug</th>

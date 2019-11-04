@@ -11,7 +11,7 @@ while($row=mysqli_fetch_array($select_allposts)) {
   $Status=$row['Status'];
   }
   if ($Status=="Publish") {
-   $query="UPDATE pages SET Title='$title',username='$fname',publishTime='$fdate' WHERE id={$id}";
+   $query="UPDATE pages SET Title='$title',username='$fname',publishTime='$fdate',createdDate='$fdate' WHERE id={$id}";
   $update_query=mysqli_query($connection,$query);
   if (!$update_query) {
     printf("Error: %s\n", mysqli_error($connection));
@@ -19,7 +19,7 @@ while($row=mysqli_fetch_array($select_allposts)) {
   }  
   }
   if ($Status=="Draft") {
-   $query="UPDATE pages SET Title='$title',username='$fname', draftTime='$fdate' WHERE id={$id}";
+   $query="UPDATE pages SET Title='$title',username='$fname', draftTime='$fdate',createdDate='$fdate' WHERE id={$id}";
   $update_query=mysqli_query($connection,$query);
   if (!$update_query) {
     printf("Error: %s\n", mysqli_error($connection));
@@ -56,6 +56,7 @@ $select_by_author_query="SELECT * FROM pages  WHERE  username='{$selectByAuthor}
   $categoryName=$row['categoryName'];
   $draftTime=$row['draftTime'];
   $publishTime=$row['publishTime'];
+   $createdDate=$row['createdDate'];
   ?>
       
   <tr>
@@ -64,13 +65,13 @@ $select_by_author_query="SELECT * FROM pages  WHERE  username='{$selectByAuthor}
     <td><label><?php echo $username;  ?></label></td>
     <td class="page_control"><label><?php echo $categoryName;  ?></label></td>
 
-    <td><label></label></td>
-    <td><label></label></td>
+    <!-- <td><label></label></td>
+    <td><label></label></td> -->
    
     <td><?php if ($draftTime != "") {
-                 echo    $draftTime; 
+                 echo    $createdDate; 
     }else{
-         echo    $publishTime;
+         echo    $createdDate;
     }                        ?></td>
 
 
@@ -176,7 +177,7 @@ $select_by_author_query="SELECT * FROM pages  WHERE  username='{$selectByAuthor}
     //$("#update_id").val(data[0]);
     $("#title").val(data[1]);
     $("#content").val(data[2]);
-    $("#datepicker").val(data[6]);
+    $("#datepicker").val(data[4]);
      });
 });
 

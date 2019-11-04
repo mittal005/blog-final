@@ -59,7 +59,7 @@ $select_by_category_query="SELECT * FROM posts  WHERE username='{$selectByAuthor
   ?>
       
   <tr>
-    <td><input type="checkbox" class="checkthis" /></td>
+    <!-- <td><input type="checkbox" class="checkthis" /></td> -->
     <td class="author_td"><label><?php echo $title;  ?></label></td>
     <td><label><?php echo $username;  ?></label></td>
     <td class="page_control"><label><?php echo $categoryName;  ?></label></td>

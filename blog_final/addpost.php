@@ -2,7 +2,6 @@
 <?php
 if(isset($_POST['saveDraft']))
 {
-  
     $username=$_SESSION['username'];
     $user_id=$_SESSION['user_id'];
     $addTitle=$_POST['addTitle'];
@@ -123,7 +122,7 @@ if(isset($_POST['add_new_category']))
     <form class="" action='' method="post" enctype="multipart/form-data">
       <input type="text" class="form-control" name="addTitle"  placeholder="Add Title" >
       <br>
-      <span class="add_media" id="media" readonly="true">Add Media</span>
+      <!-- <span class="add_media" id="media" readonly="true">Add Media</span> -->
        <div id="editor">
     
     <div  contentEditable="true" data-text="Enter">
@@ -222,8 +221,6 @@ if(isset($_POST['add_new_category']))
         </a>
       </h5>
     </div>
-
-
      <div id="activity" class="collapse show" aria-labelledby="activityone" data-parent="publish">
        <div class="card-body">
 <div class="row">
@@ -256,7 +253,7 @@ if(isset($_POST['add_new_category']))
        
 
 </div>
-<br><br>
+<br>
        <button class="btn btn-primary mar_top_20">Update</button>         
    </div>
      </div>

@@ -32,6 +32,95 @@ while($row=mysqli_fetch_array($select_allposts)) {
 // -----------------------------
 if (isset($_POST['delete_post'])) {
    $id=$_POST['deleteID'];  
+
+   $query="SELECT * FROM posts WHERE id={$id}";
+   $select_query=mysqli_query($connection,$query);
+   if (!$select_query) {
+    printf("Error: %s\n", mysqli_error($connection));
+    exit();
+  }  
+    while ($row=mysqli_fetch_array($select_query)) {
+       $userid=$row['user_id'];
+       $username=$row['username'];
+       $Title=$row['Title'];
+       $Content=$row['Content'];
+        $Status=$row['Status'];
+       $draftTime=$row['draftTime'];
+       $publishTime=$row['publishTime'];
+       $Visibility=$row['Visibility'];
+       $publihedOn=$row['publihedOn'];
+       $Format=$row['Format'];
+       $selectCategory=$row['selectCategory'];
+       $categoryName=$row['categoryName'];
+       $categoryType=$row['categoryType'];
+       $seo_title=$row['seo_title'];
+       $url=$row['url'];
+       $seo_schema=$row['seo_schema'];
+       $image=$row['image'];
+    }
+
+    if(empty($userid)){ 
+          $userid="";  
+    }
+    if(empty($username)){ 
+          $username="";  
+    }
+    if(empty($Title)){ 
+          $Title="";  
+    }
+    if(empty($Content)){ 
+          $Content="";  
+    }
+    if(empty($Status)){ 
+          $Status="";  
+    }
+    if(empty($draftTime)){ 
+          $draftTime="";  
+    }
+    if(empty($publishTime)){ 
+          $publishTime="";  
+    }
+    if(empty($Visibility)){ 
+          $Visibility="";  
+    }
+    if(empty($publihedOn)){ 
+          $publihedOn="";  
+    }
+    if(empty($Format)){ 
+          $Format="";  
+    }
+
+    if(empty($selectCategory)){ 
+          $selectCategory="";  
+    }
+     if(empty($categoryName)){ 
+         $categoryName="";  
+    }
+    if(empty($categoryType)){ 
+          $categoryType="";  
+    }
+    if(empty($seo_title)){ 
+          $seo_title="";  
+    }
+
+    if(empty($url)){ 
+          $url="";  
+    }
+    if(empty($seo_schema)){ 
+          $seo_schema="";  
+    }
+
+    if(empty( $image)){ 
+           $image="";  
+    }
+
+    $query="INSERT INTO trash(user_id,username,Title,Content,Status,draftTime,publishTime,Visibility,publihedOn,Format,selectCategory,categoryName,categoryType,seo_title,url,seo_schema,image)VALUES('$userid','$username','$Title','$Content','$Status','$draftTime','$publishTime','$Visibility',' $publihedOn','$Format','$selectCategory','$categoryName','$categoryType','$seo_title','$url','$seo_schema','$image')";
+    $insert_query=mysqli_query($connection,$query);
+    if (!$insert_query) {
+    printf("Error: %s\n", mysqli_error($connection));
+    exit();
+  }  
+  
   
    $query="DELETE FROM posts WHERE id={$id}";
   $delete_query=mysqli_query($connection,$query);
@@ -99,8 +188,8 @@ while($row=mysqli_fetch_array($select_allposts)) {
     <td><label><?php echo $username;  ?></label></td>
     <td class="page_control"><label><?php echo $categoryName;  ?></label></td>
 
-    <td><label></label></td>
-    <td><label></label></td>
+    <!-- <td><label></label></td>
+    <td><label></label></td> -->
    
     <td><?php if ($draftTime != "") {
                  echo    $draftTime; 
@@ -243,7 +332,7 @@ while($row=mysqli_fetch_array($select_allposts)) {
     //$("#update_id").val(data[0]);
     $("#title").val(data[1]);
     $("#content").val(data[2]);
-    $("#datepicker").val(data[6]);
+    $("#datepicker").val(data[4]);
      });
 });
 

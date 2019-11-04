@@ -1,9 +1,9 @@
  <?php
  if (isset($_POST['update_post'])) {
    $id=$_POST['bookId'];  
-   $title=$_POST['ftitle'];
-   $fname=$_POST['fname'];
-   $fdate=$_POST['fdate'];
+   echo $title=$_POST['ftitle'];
+   echo $fname=$_POST['fname'];
+   echo $fdate=$_POST['fdate'];
    //$password=$_POST['fdate'];
    $select_query="SELECT Status FROM posts WHERE id=$id";
 $select_allposts=mysqli_query($connection,$select_query);
@@ -11,7 +11,7 @@ while($row=mysqli_fetch_array($select_allposts)) {
   $Status=$row['Status'];
   }
   if ($Status=="Publish") {
-   $query="UPDATE posts SET Title='$title',username='$fname',publishTime='$fdate' WHERE id={$id}";
+   $query="UPDATE posts SET Title='$title',username='$fname',onlyDate='$fdate' WHERE id={$id}";
   $update_query=mysqli_query($connection,$query);
   if (!$update_query) {
     printf("Error: %s\n", mysqli_error($connection));
@@ -19,7 +19,7 @@ while($row=mysqli_fetch_array($select_allposts)) {
   }  
   }
   if ($Status=="Draft") {
-   $query="UPDATE posts SET Title='$title',username='$fname', draftTime='$fdate' WHERE id={$id}";
+   $query="UPDATE posts SET Title='$title',username='$fname',onlyDate='$fdate' WHERE id={$id}";
   $update_query=mysqli_query($connection,$query);
   if (!$update_query) {
     printf("Error: %s\n", mysqli_error($connection));
@@ -40,7 +40,7 @@ if (isset($_POST['delete_post'])) {
   }  
 }
 // -----------------------------
- $publihedOn=$_POST['byDate']; 
+  
 $select_by_author_query="SELECT * FROM posts  WHERE  onlyDate='{$publihedOn}'";
   $show_by_author_query=mysqli_query($connection,$select_by_author_query);
   if (!$show_by_author_query) {
@@ -55,6 +55,7 @@ $select_by_author_query="SELECT * FROM posts  WHERE  onlyDate='{$publihedOn}'";
   $categoryName=$row['categoryName'];
   $draftTime=$row['draftTime'];
   $publishTime=$row['publishTime'];
+  $onlyDate=$row['onlyDate'];
   ?>
       
   <tr>
@@ -63,14 +64,10 @@ $select_by_author_query="SELECT * FROM posts  WHERE  onlyDate='{$publihedOn}'";
     <td><label><?php echo $username;  ?></label></td>
     <td class="page_control"><label><?php echo $categoryName;  ?></label></td>
 
-    <td><label></label></td>
-    <td><label></label></td>
+    <!-- <td><label></label></td>
+    <td><label></label></td> -->
    
-    <td><?php if ($draftTime != "") {
-                 echo    $draftTime; 
-    }else{
-         echo    $publishTime;
-    }                        ?></td>
+    <td><?php echo $onlyDate;   ?></td>
 
 
 
@@ -180,7 +177,7 @@ $select_by_author_query="SELECT * FROM posts  WHERE  onlyDate='{$publihedOn}'";
     //$("#update_id").val(data[0]);
     $("#title").val(data[1]);
     $("#content").val(data[2]);
-    $("#datepicker").val(data[6]);
+    $("#datepicker").val(data[4]);
      });
 });
 

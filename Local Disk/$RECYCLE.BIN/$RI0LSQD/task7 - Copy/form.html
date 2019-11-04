@@ -1,0 +1,71 @@
+<script language="JavaScript" script type="text/javascript">
+
+function checkDate(name)
+{
+	var x = document.forms[0].elements;
+	var day = parseInt(x[name+"_day"].options[x[name+"_day"].selectedIndex].value);
+	var month = parseInt(x[name+"_month"].options[x[name+"_month"].selectedIndex].value);
+	var year = parseInt(x[name+"_year"].options[x[name+"_year"].selectedIndex].value);
+
+
+	var current = new Date();
+	current = current.getTime();
+
+	var dateToCheck = new Date();
+	dateToCheck.setYear(year);
+	dateToCheck.setMonth(month);
+	dateToCheck.setDate(31)
+	var checkdate = dateToCheck.getTime();
+
+	if (checkdate < current)
+		{
+    		document.write("This credit card has expired! Please use another card.");
+    		return;
+		}
+
+		else
+		{
+    		document.write("Your credit card is valid. Thank you!");
+    		return;
+	}
+}
+
+</script>
+<html>
+<body>
+    <tr>
+        <td>Expiration Date: </td>
+        <td><select name="test_month"> 
+		<option value="" selected="selected">Select Month</option> 
+		<option value="0">January</option> 
+		<option value="1">February</option> 
+		<option value="2">March</option> 
+		<option value="3">April</option> 
+		<option value="4">May</option> 
+		<option value="5">June</option> 
+		<option value="6">July</option> 
+		<option value="7">August</option> 
+		<option value="8">September</option> 
+		<option value="9">October</option> 
+		<option value="10">November</option> 
+		<option value="11">December</option>
+		</select>
+            <select name="test_year"> 
+		<option value="" selected="selected">Select Year</option> 
+		<option value="2005">2005</option> 
+		<option value="2006">2006</option> 
+		<option value="2007">2007</option> 
+		<option value="2008">2008</option> 
+		<option value="2009">2009</option> 
+		<option value="2010">2010</option> 
+		<option value="2011">2011</option> 
+		<option value="2012">2012</option> 
+		<option value="2013">2013</option> 
+		<option value="2014">2014</option> 
+		<option value="2015">2015</option> 
+		<option value="2016">2016</option>
+		</select></td>
+    </tr>
+    <tr>
+    <td><INPUT type="button" name="Submit" value="Submit" onclick="checkDate ('test')"> <INPUT type="button" name="Reset" value="Reset" /></td>
+    </tr></body></html>

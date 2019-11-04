@@ -44,9 +44,8 @@ if($select_draft_query){
             <div class="col-md-12">
               <div class="row">
           <div class="col-md-12">
-         <a href="allpages.php?show=all"> All (<span><?php echo $total_posts;    ?></span>) </a> |  <a href="allpages.php?show=published"> Published </a> (<span><?php echo $publish_posts;   ?></span>)  | <a href="allpages.php?show=draft">  Draft </a>(<span><?php echo $draft_posts; ?></span>) <!-- <a href="#"> Trash</a> (<span></span>) -->
-
-        </div>
+         <a href="allpages.php?show=all"> All </a> (<span><?php echo $total_posts;    ?></span>) |  <a href="allpages.php?show=published"> Published </a> (<span><?php echo $publish_posts;   ?></span>)  | <a href="allpages.php?show=draft">  Draft </a>(<span><?php echo $draft_posts; ?></span>) <!-- <a href="#"> Trash</a> (<span></span>) -->
+      </div>
 </div>
       
 <div class="row dash_row" id="filter">
@@ -115,7 +114,14 @@ if($select_draft_query){
      <!-- <button type="button" class="btn btn-primary" >Apply</button> -->
       </form>
   </div>
-  
+   <div class="col-md-2">
+  <form action="" method="post">
+            <input type="text" name="valueToSearch" class="form-control" placeholder="Value To Search">
+        </div>
+            <div class="col-md-2">
+            <input type="submit" name="search" class="btn btn-primary"value="Filter">
+             </div>
+        </form>
 </div>
 </div>
 </div>
@@ -128,7 +134,7 @@ if($select_draft_query){
                    
                    <thead>
                    
-                   <th><input type="checkbox" id="checkall" /></th>
+                   <th><!-- <input type="checkbox" id="checkall" /> --></th>
                    <th>Title</th>
                     <th>Author</th>
                      <th>Categories</th>
@@ -160,7 +166,6 @@ switch ($show) {
                case 'sort':
               include "sort.php"; 
                break;
-
               default:
               include "includes/allpages.php"; 
                break;

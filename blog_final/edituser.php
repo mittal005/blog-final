@@ -79,10 +79,10 @@ if (isset($_POST['update'])) {
 
               <label>Re-type Password</label>
               <input type="Password" class="form-control" id="repassword" name="repassword" required>
-              <div class="form-check">
+             <!--  <div class="form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <span class="form-check-label">Send the new user an email about their account</span>
-  </div>
+  </div> -->
 
   <label >Role</label>
     <select class="form-control" name="role" >

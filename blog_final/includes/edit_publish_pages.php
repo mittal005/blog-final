@@ -270,7 +270,7 @@ if ($statusdropdown == 'Publish') {
                             while($row=mysqli_fetch_array($select_all_categories_query)){
                               $name=$row['name'];
                                               ?>
-                    <input type="checkbox" class="mar_top_20"> <?php echo $name;    ?><br>
+                    <!-- <input type="checkbox" class="mar_top_20"> --> <?php echo $name;    ?><br>
                                         
                                         <?php
                                       }

@@ -194,9 +194,9 @@ if ($statusdropdown == 'Publish') {
     </div>
      <div id="activity" class="collapse show" aria-labelledby="activityone" data-parent="publish">
        <div class="card-body">
-       <div class="row">
+       <!-- <div class="row">
       <div class="col-md-6"> <button class="btn btn-primary">Preview</button></div><div class="col-md-6"
-        ><button class="btn btn-primary" id="btn1" name="saveDraft">Save Draft</button></div></div>
+        ><button class="btn btn-primary" id="btn1" name="saveDraft">Save Draft</button></div></div> -->
        <br>
        <i class="fa fa-key"></i><span class="mar_right_20">Status:</span><label id="status" class="mar_right_20"></label><a href="#" onclick="status('answer1');return false;">Edit</a>
        <br>

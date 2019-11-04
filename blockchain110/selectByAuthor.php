@@ -24,8 +24,8 @@ $select_by_author_query="SELECT * FROM posts  WHERE  username='{$selectByAuthor}
     <td><label><?php echo $username;  ?></label></td>
     <td class="page_control"><label><?php echo $categoryName;  ?></label></td>
 
-    <td><label></label></td>
-    <td><label></label></td>
+    <!-- <td><label></label></td>
+    <td><label></label></td> -->
    
     <td><?php if ($draftTime != "") {
                  echo    $draftTime; 
@@ -56,3 +56,4 @@ $select_by_author_query="SELECT * FROM posts  WHERE  username='{$selectByAuthor}
 </tbody>
 <?php
 }
+?>

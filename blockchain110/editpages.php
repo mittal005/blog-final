@@ -22,6 +22,7 @@ while($row=mysqli_fetch_array($select_edit_query)) {
   $Status=$row['Status'];
   $Visibility=$row['Visibility'];
   $publihedOn=$row['publihedOn'];
+  $selectCategory=$row['selectCategory'];
   $categoryName=$row['categoryName'];
   $categoryType=$row['categoryType'];
     
@@ -38,12 +39,17 @@ if (isset($_POST['update'])) {
    $statusdropdown=$_POST['statusdropdown'];
    date_default_timezone_set("Asia/Kolkata");
      $current_time = date("F j, Y, g:i a");
+     if(!empty($_POST['visible'])){ 
    $visible=$_POST['visible'];
+   }else{
+        $visible="";
+      }
    $date=$_POST['date'];
+   echo $selectCategory=$row['select_category'];
    $category_name=$_POST['category_name'];
    $category_type=$_POST['category_type'];
 if ($statusdropdown == 'Draft') {
-   $query="UPDATE pages SET Title='$addTitle',Content='$postContent',seo_title='$seo_title',description='$description',url='$url',seo_schema='$schema',draftTime='$current_time',Status='$statusdropdown', Visibility='$visible',publihedOn='$date',  categoryName='$category_name',categoryType='$category_type' WHERE id={$edit_id}";
+   $query="UPDATE pages SET Title='$addTitle',Content='$postContent',seo_title='$seo_title',description='$description',url='$url',seo_schema='$schema',draftTime='$current_time',Status='$statusdropdown', Visibility='$visible',publihedOn='$date',selectCategory='$selectCategory', categoryName='$category_name',categoryType='$category_type' WHERE id={$edit_id}";
   $update_query=mysqli_query($connection,$query);
   
     if (!$update_query) {
@@ -57,13 +63,14 @@ if ($statusdropdown == 'Draft') {
 
 if ($statusdropdown == 'Publish') {
 
- $query="UPDATE pages SET Title='$addTitle',Content='$postContent',seo_title='$seo_title',description='$description',url='$url',seo_schema='$schema',publishTime='$current_time',Status='$statusdropdown', Visibility='$visible',publihedOn='$date',  categoryName='$category_name',categoryType='$category_type' WHERE id={$edit_id}";
+ $query="UPDATE pages SET Title='$addTitle',Content='$postContent',seo_title='$seo_title',description='$description',url='$url',seo_schema='$schema',publishTime='$current_time',Status='$statusdropdown', Visibility='$visible',publihedOn='$date',selectCategory='$selectCategory', categoryName='$category_name',categoryType='$category_type' WHERE id={$edit_id}";
   $update_query=mysqli_query($connection,$query);
   
     if (!$update_query) {
     printf("Error: %s\n", mysqli_error($connection));
     exit();
-  }else{
+  }
+  else{
   header("Location:allpages.php");
   } 
         }
@@ -194,9 +201,9 @@ if ($statusdropdown == 'Publish') {
     </div>
      <div id="activity" class="collapse show" aria-labelledby="activityone" data-parent="publish">
        <div class="card-body">
-       <div class="row">
+      <!--  <div class="row">
       <div class="col-md-6"> <button class="btn btn-primary">Preview</button></div><div class="col-md-6"
-        ><button class="btn btn-primary" id="btn1" name="saveDraft">Save Draft</button></div></div>
+        ><button class="btn btn-primary" id="btn1" name="saveDraft">Save Draft</button></div></div> -->
        <br>
        <i class="fa fa-key"></i><span class="mar_right_20">Status:</span><label id="status" class="mar_right_20"></label><a href="#" onclick="status('answer1');return false;">Edit</a>
        <br>
@@ -261,16 +268,16 @@ if ($statusdropdown == 'Publish') {
   <div id = "content1">
      <?php
                            //$connection=mysqli_connect('localhost','root','','admin');
-                           $select_query="SELECT name FROM category ORDER BY id DESC LIMIT 5";
+                           $select_query="SELECT DISTINCT selectCategory FROM pages ORDER BY id DESC LIMIT 5";
                            $select_all_categories_query=mysqli_query($connection, $select_query);
                 if (!$select_all_categories_query) {
     printf("Error: %s\n", mysqli_error($connection));
     exit();
   }
                             while($row=mysqli_fetch_array($select_all_categories_query)){
-                              $name=$row['name'];
+                              $name=$row['selectCategory'];
                                               ?>
-                    <input type="checkbox" class="mar_top_20"> <?php echo $name;    ?><br>
+                    <input type="checkbox" name="select_category" value="$selectCategory" <?php echo ($name == $selectCategory) ? "checked" : "" ; ?>/  class="mar_top_20"> <?php echo $name;    ?><br>
                                         
                                         <?php
                                       }

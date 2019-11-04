@@ -1,0 +1,191 @@
+
+.sidebar .nav-item .nav-link:active, .sidebar .nav-item .nav-link:focus, .sidebar .nav-item .nav-link:hover {
+    color:#fff !important;
+}
+.outer-w3-agile {
+    padding: 2em 1em;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.25);
+    background: #fff;
+}
+.cke_textarea_inline{
+    border: 1px solid black;
+  }
+.dash_row
+{
+	margin-top: 22px !important;
+}
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #fff !important;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.card-header a
+{
+	display: block;
+  position: relative;
+
+}
+.card-header  a[aria-expanded="false"]:before {
+   content: "\f078"; /* fa-chevron-down */
+  font-family: 'FontAwesome';
+  position: absolute;
+  right: 0;
+}
+.card-header a[aria-expanded="true"]:after {
+  right: 0;
+	 position: absolute;
+	font-family: 'FontAwesome';
+  content: "\f077"; 
+} 
+.mar_bottom_20
+{
+	margin-bottom:20px;
+}
+h6
+{
+	padding: 12px 0px;
+}
+#activity span>a
+{
+	padding-left:65px;
+}
+textarea
+{
+	height:120px !important;
+}
+label
+{
+	padding-top:30px;
+}
+button
+{
+	margin-top:30px !important;
+}
+#recentdraft label
+{
+	padding-left:65px;
+}
+.form-check
+{
+margin-top:20px;
+}
+#user1
+{
+  display:none;
+}
+.navbar
+{
+	position: fixed !important;
+    z-index: 999 !important;
+   width:100%;
+   margin:auto;
+}
+.sidebar 
+{
+	    margin-top: 55px !important;
+}
+.container-fluid
+{
+	margin-top:55px !important;
+}
+
+.table_btn
+{
+	margin-top:0px !important;
+}
+table
+{
+
+font-size:12px !important;
+height:50%;
+}
+.author_td
+{
+	width:423px !important;
+}
+.page_control
+{
+	width:86px !important;
+}
+
+.modal-header button
+{
+	margin-top: 0px !important;
+	padding:0px 10px !important;
+}
+.datepicker {
+            font-size: 12px;
+        }
+        /* solution 2: the original datepicker use 20px so replace with the following:*/
+.datepicker td, .datepicker th {
+            width: 10px;
+            height:5px;
+        }
+
+#filter button
+{
+	margin-top:0px !important;
+}
+.button
+{
+  margin-top:0px !important;
+}
+.title_input
+{
+  height:51px;
+  width:803px;
+}
+#y
+{
+  display:none;
+}
+.mar_top_20
+{
+  margin-top:20px !important;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  #user
+  {
+    display:none;
+  }
+  #user1
+  {
+    display:block;
+  }
+
+}
+@media (max-width: 991px) {
+  
+   #user
+  {
+    display:none;
+  }
+  #user1
+  {
+    display:block;
+  }
+
+
+}
+@media (min-width: 770px) and (max-width: 991px) {
+
+ #user
+  {
+    display:none;
+  }
+  #user1
+  {
+    display:block;
+  }
+}
+
+@media (min-width: 1360px) and (max-width:1600px){
+
+  
+  
+	
+}
